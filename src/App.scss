@@ -1,0 +1,31 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+body, a {
+  margin: 0;
+  font-family: 'Segoe UI',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  background: white;
+}
+
+// .toggleColor, .toggleColor a, .toggleColor a:hover {
+//   color: white;
+//   background: black;
+//   .nav-last-item > div {
+//     background: white !important;
+//   }
+// }
+
+a {
+  outline: none;
+}
+a:hover {
+  color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

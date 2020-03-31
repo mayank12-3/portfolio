@@ -1,4 +1,6 @@
 import React from 'react'
+import ExperienceTimelineComponent from './timelineExp'
+import ProjectsComponent from './projects.js'
 import './index.scss'
 
 function Content() {
@@ -17,7 +19,9 @@ function Content() {
           I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient.
         </p>
         <div className='into-section-btn-wrapper'>
-          <button className='btn'>Get in touch</button>
+          <button className='btn'>
+            <span>Get in touch</span>
+          </button>
         </div>
         <br />
         {/*
@@ -34,20 +38,9 @@ function Content() {
           </picture>
         </div>
       </section>
-      <section id='experience-section-wrapper'>
-        <div className='section-heading'>
-          Experience Timeline
-        </div>
-        <div className='work-info-wrapper-content'>
-          <div className='work-info-wrapper__timeline_bar toggle-dark-mode' />
-        </div>
-      </section>
-      <section>
-        <div className='section-heading'>
-          Work
-        </div>
-      </section>
-      <section className='about-me-sectino'>
+      <ExperienceTimelineComponent />
+      <ProjectsComponent />
+      <section id='aboutme-section-wrapper'>
         <div className='section-heading'>
           About Me
         </div>

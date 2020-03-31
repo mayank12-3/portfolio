@@ -1,7 +1,7 @@
 .navbar {
   padding: 25px 100px 40px !important;
   background: white;
-  z-index: 1 !important;
+  z-index: 10 !important;
   .navbar-brand {
     padding: 0;
     img {
@@ -21,7 +21,7 @@
   }
   .nav-item {
     text-align: right;
-    padding: 0 40px;
+    padding-left: 60px;
     li {
       transition: 0.5s
     }
@@ -49,7 +49,7 @@
     // }
   }
   .nav-last-item {
-    padding: 0 0 0 40px !important;
+    padding: 0 0 0 30px !important;
   }
 }
 @media (max-width: 900px) {
@@ -62,9 +62,12 @@
   .navbar {
     padding: 25px 25px 40px !important;
   }
+  .mobile-view-navbar__close-icon {
+    padding: 10px 25px !important;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .nav-item {
     display: none !important;
   }
@@ -79,7 +82,7 @@
   height: 0%;
   width: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: 15;
   top: 0;
   left: 0;
   background-color: black;

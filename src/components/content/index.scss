@@ -29,7 +29,7 @@
     .btn {
       position: relative;
       padding: 10px 50px 10px 20px;
-      border: 1px solid black;
+      border: 2px solid black;
       border-radius: 5px;
       transition: .3s ease-in;
       span::after {
@@ -51,25 +51,25 @@
         box-shadow: none;
       }
     }
-    .picture__outline {
-      width: 300px;
-      background: grey;
-      position: absolute;
-      right: 0;
-      top: 0%;
-      height: 300px;
-      transform: translate(20px, 20px);
-      border-radius: 5px;
-    }
     .intro-section_image {
       height: 300px;
       position: absolute;
       right: 3.5%;
       top: 20%;
+      .picture__outline {
+        width: 300px;
+        background: #8080807d;
+        position: absolute;
+        right: 0;
+        top: 0%;
+        height: 300px;
+        transform: translate(20px, 20px);
+        border-radius: 5px;
+      }
       img {
         border-radius: 5px;
         filter: grayscale(100%);
-        transition: .2s ease-in;
+        transition: .35s ease-in;
         &:hover {
           transform: translate(20px, 20px);
           filter: grayscale(0%);

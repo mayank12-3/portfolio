@@ -17,7 +17,7 @@ function Content() {
           I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient.
         </p>
         <div className='into-section-btn-wrapper'>
-          <button>Get in touch</button>
+          <button className='btn'>Get in touch</button>
         </div>
         <br />
         {/*
@@ -25,11 +25,14 @@ function Content() {
             Shortly after graduating from VJTI, I joined the engineering team at Servify where I work on a wide variety of interesting and meaningful projects on a daily basis.
           </p>
           */}
-        <picture className='intro-section_image'>
-          <source media='(min-width: 850px)' srcSet='https://i.picsum.photos/id/866/300/300.jpg' />
-          <source media='(max-width: 840px)' srcSet='https://i.picsum.photos/id/866/260/260.jpg' />
-          <img src='https://i.picsum.photos/id/866/260/260.jpg' alt='Profilepic' style={{ width: 'auto' }} />
-        </picture>
+        <div className='intro-section_image'>
+          <div className='picture__outline' />
+          <picture>
+            <source media='(min-width: 850px)' srcSet='https://i.picsum.photos/id/866/300/300.jpg' />
+            <source media='(max-width: 840px)' srcSet='https://i.picsum.photos/id/866/260/260.jpg' />
+            <img src='https://i.picsum.photos/id/866/260/260.jpg' alt='Profilepic' style={{ width: 'auto' }} />
+          </picture>
+        </div>
       </section>
       <section id='experience-section-wrapper'>
         <div className='section-heading'>

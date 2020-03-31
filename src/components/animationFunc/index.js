@@ -24,8 +24,8 @@ export const toggleColor = () => {
 }
 
 export const overrideScrollhander = () => {
+	// WIP
 	let topScrolledBy = document.body.getBoundingClientRect().y
-	console.log('scroll value: ', Math.abs(topScrolledBy || -1)/2)
 	let updatedVal = Math.abs(topScrolledBy || -1)/2
 	// window.scrollTo(0, Math.abs(topScrolledBy || -1)/2)
 	let body = document.body
@@ -33,14 +33,17 @@ export const overrideScrollhander = () => {
 }
 
 export const stickySectionHeader = () => {
-	let ele = document.getElementById('experience-section-wrapper')
-	const pos = ele.getBoundingClientRect()
-	let posY = pos.y
-	// let posBottom = pos.bottom
-	let stickyNode = ele.children[0]
-	if (posY <= 20 && !stickyNode.className.includes('sticky')) {
-		stickyNode.className += ' sticky'
-	} else if (posY > 20 && stickyNode.className.includes('sticky')) {
-		stickyNode.className = 'section-heading'
-	}
+	let sectionsList = Array.from(document.getElementsByTagName('section'))
+	sectionsList = sectionsList.slice(1) // exp, work, about me
+
+	sectionsList.map(ele => {
+		const pos = ele.getBoundingClientRect()
+		let posY = pos.y
+		let stickyNode = ele.children[0]
+		if (posY <= 20 && !stickyNode.className.includes('sticky')) {
+			stickyNode.className += ' sticky'
+		} else if (posY > 20 && stickyNode.className.includes('sticky')) {
+			stickyNode.className = 'section-heading'
+		}
+	})
 }

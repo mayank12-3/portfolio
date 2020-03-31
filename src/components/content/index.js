@@ -19,6 +19,7 @@ function Content() {
         <div className='into-section-btn-wrapper'>
           <button>Get in touch</button>
         </div>
+        <br />
         {/*
           <p className='intro-section_content'>
             Shortly after graduating from VJTI, I joined the engineering team at Servify where I work on a wide variety of interesting and meaningful projects on a daily basis.
@@ -30,7 +31,7 @@ function Content() {
           <img src='https://i.picsum.photos/id/866/260/260.jpg' alt='Profilepic' style={{ width: 'auto' }} />
         </picture>
       </section>
-      <section id='work-info-warpper'>
+      <section id='experience-section-wrapper'>
         <div className='section-heading'>
           Experience Timeline
         </div>

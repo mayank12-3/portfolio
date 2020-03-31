@@ -57,7 +57,9 @@ code {
 }
 
 .sticky {
-  position: fixed;
+  position: sticky;
+  background: black;
   top: 115px;
   width: 100%;
+  z-index: 1;
 }

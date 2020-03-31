@@ -23,7 +23,7 @@ export const App = () => {
         ? <div className='page-loader'>
           <div className='loader-content'>
             D
-            <div class='spinner-border text-light' role='status' />
+            <div className='spinner-border text-light' role='status' />
           </div>
         </div>
         : <Layout>

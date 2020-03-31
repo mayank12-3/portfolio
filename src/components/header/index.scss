@@ -1,6 +1,7 @@
 .navbar {
   padding: 25px 100px 40px !important;
   background: white;
+  z-index: 1 !important;
   .navbar-brand {
     padding: 0;
     img {
@@ -70,4 +71,52 @@
   .nav-drop-button {
     display: block !important;
   }
+}
+
+
+
+#mobile-view-navbar {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  overflow-y: hidden;
+  transition: 0.5s;
+  opacity: .95;
+  .mobile-view-navbar__close-icon {
+    font-size: 50px;
+    text-align: right;
+    padding: 10px 50px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15vh;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 20px;
+    list-style: none;
+  }
+  a {
+    background: black;
+  }
+}
+
+#mobile-view-navbar a {
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+
+@media screen and (max-height: 450px) {
+  #mobile-view-navbar {overflow-y: auto;}
+  #mobile-view-navbar a {font-size: 20px}
 }

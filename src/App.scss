@@ -1,13 +1,13 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
-body, a {
+body {
   margin: 0;
-  font-family: 'Segoe UI',
-    sans-serif;
+  font-family: monospace, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: black;
   background: white;
+  font-size: 16.8px;
 }
 
 // .toggleColor, .toggleColor a, .toggleColor a:hover {
@@ -19,6 +19,8 @@ body, a {
 // }
 
 a {
+  color: black;
+  background: white;
   outline: none;
 }
 a:hover {

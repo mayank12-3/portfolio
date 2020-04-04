@@ -1,0 +1,21 @@
+.section-heading {
+  font-size: 50px;
+}
+
+@media (max-width: 1000px) {
+  .section-heading {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 501px) {
+  .section-heading {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-heading {
+    font-size: 30px !important;
+  }
+}

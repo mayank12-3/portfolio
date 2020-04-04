@@ -18,20 +18,19 @@
     justify-content: center;
     align-items: center;
   }
-  .section-heading {
-    font-size: 50px;
-  }
   .intro-section {
     height: auto;
     .section-heading {
       width: 60%;
     }
+    @media (max-width: 1000px) {
+      .section-heading {
+        width: 90% !important;
+      }
+    }
     .btn {
+      padding: 10px 50px 10px 20px !important;
       position: relative;
-      padding: 10px 50px 10px 20px;
-      border: 2px solid black;
-      border-radius: 5px;
-      transition: .3s ease-in;
       span::after {
         content: "→";
         position: absolute;
@@ -41,14 +40,9 @@
         transition: .25s ease-in;
       }
       &:hover {
-        background: black;
-        color: white;
         ::after {
           right: 10px;
         }
-      }
-      &:focus {
-        box-shadow: none;
       }
     }
     .intro-section_image {
@@ -58,12 +52,12 @@
       top: 20%;
       .picture__outline {
         width: 300px;
-        background: #8080807d;
+        background: hsla(0,0%,50.2%,.49);
         position: absolute;
         right: 0;
-        top: 0%;
+        top: 0;
         height: 300px;
-        transform: translate(20px, 20px);
+        transform: translate(20px,20px);
         border-radius: 5px;
       }
       img {
@@ -71,30 +65,17 @@
         filter: grayscale(100%);
         transition: .35s ease-in;
         &:hover {
-          transform: translate(20px, 20px);
-          filter: grayscale(0%);
+          transform: translate(20px,20px);
+          filter: grayscale(0);
         }
       }
     }
-    .intro-section_content {
+    .section-content-wrapper {
       width: 55%;
     }
+
     @media (max-width: 1000px) {
-      .section-heading {
-        width: 100%;
-      }
       .intro-section_image {
-        display: none;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        right: 0;
-        top: 0;
-        img:hover {
-          transform: none;
-        }
-      }
-      .picture__outline {
         display: none;
       }
       .intro-section_content {
@@ -118,20 +99,96 @@
       }
     }
   }
+
+  #work-section-wrapper {
+    .project-container {
+      display: flex;
+      .project-preview {
+        width: 40%;
+        max-width: 400px;
+      }
+      .project-info {
+        width: 60%;
+        padding-left: 8%;
+        .project-title {
+          font-size: 25px;
+          margin-bottom: 8px;
+        }
+        .project-content {
+          .btn {
+            padding: 10px 50px 10px 20px;
+            margin-top: 20px;
+            span::after {
+              content: "→";
+              position: absolute;
+              font-size: 30px;
+              right: 20px;
+              top: -3px;
+              transition: .25s ease-in;
+            }
+            &:hover {
+              ::after {
+                right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 800px) {
+      .project-container {
+        display: block;
+        .project-preview {
+          width: 100%;
+          max-width: 360px;
+        }
+        .project-info {
+          width: 90%;
+          margin-top: 5%;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  #aboutme-section-wrapper {
+    .aboutme-container {
+      display: flex;
+      .about-section_image {
+        margin-top: 30px;
+        margin-right: 50px;
+        height: 250px;
+        width: 250px;
+        background-image: url('./profilepic.jpg');
+        border-radius: 50%;
+        background-size: cover;
+        background-position: 25px;
+        filter: blur(1.5px);
+        transition: 0.5s ease-in;
+        &:hover {
+          filter: blur(0);
+        }
+      }
+      p {
+        align-self: center;
+      }
+    }
+    @media (max-width: 700px) {
+      .aboutme-container {
+        display: block;
+        .about-section_image {
+          margin-bottom: 30px;
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
 }
 
 @media (max-width: 500px) {
   section {
     min-height: calc(100vh - 60px) !important;
     padding: 50px 0 !important;
-  }
-  .section-heading {
-    font-size: 30px !important;
-  }
-}
-
-@media (max-width: 700px) and (min-width: 501px) {
-  .section-heading {
-    font-size: 40px !important;
   }
 }

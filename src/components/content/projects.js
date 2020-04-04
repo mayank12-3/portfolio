@@ -1,11 +1,45 @@
 import React from 'react'
+import {
+  Button,
+  SectionHeading,
+  SectionContent,
+  BrowserInterface
+} from '../commonComponents'
 import './index.scss'
 
-function ProjectsComponent() {
+export const ProjectTitle = (props) =>
+  <div className='project-title'>{props.children}</div>
+
+export const ProjectContent = (props) =>
+  <div className='project-content'>
+    <SectionContent>{props.children}</SectionContent>
+  </div>
+
+export const ProjectsComponent = () => {
   return (
     <section id='work-section-wrapper'>
-      <div className='section-heading'>
-        Work
+      <SectionHeading>Work</SectionHeading>
+      <br /><br />
+      <div className='project-container'>
+        <div className='project-preview'>
+          <BrowserInterface src={window.location.origin + '/.html'}/>
+        </div>
+        <div className='project-info'>
+          <ProjectTitle>Pac Man</ProjectTitle>
+          <ProjectContent>
+            <label>Description:&nbsp;</label>
+            <span>Content....</span>
+            <br />
+            <label>Tech:&nbsp;</label>
+            <span>
+              React.js, Bootstrap
+            </span>
+            <br />
+            <Button className='btn-filled'>
+              <span>Visit</span>
+            </Button>
+          </ProjectContent>
+        </div>
       </div>
     </section>
   )

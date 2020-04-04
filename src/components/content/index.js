@@ -1,6 +1,13 @@
 import React from 'react'
 import ExperienceTimelineComponent from './timelineExp'
-import ProjectsComponent from './projects.js'
+import ProjectsComponent from './projects'
+import AboutMeComponent from './aboutme'
+import {
+  Button,
+  SectionHeading,
+  SectionContent,
+  PictureComp
+} from '../commonComponents'
 import './index.scss'
 
 function Content() {
@@ -8,20 +15,20 @@ function Content() {
     <div className='main-content-wrapper'>
       <div className='right-sidebar'><marquee><h3>Retarded</h3></marquee></div>
       <section className='intro-section'>
-        <div className='section-heading'>
-          Hi, I'm<br />
+        <SectionHeading>
+          Hi, I'm <br />
           Deepak Chaudhari<br />
-          I build things for web
-        </div>
+          I build things for the web
+        </SectionHeading>
         <br /><br />
-        <p className='intro-section_content'>
+        <SectionContent className='intro-section_content light-text'>
           I'm a software engineer based in Mumbai, who enjoys building things that live on the internet.
-          I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient.
-        </p>
-        <div className='into-section-btn-wrapper'>
-          <button className='btn'>
+          I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficiency.
+        </SectionContent>
+        <div>
+          <Button className='btn-outline'>
             <span>Get in touch</span>
-          </button>
+          </Button>
         </div>
         <br />
         {/*
@@ -40,11 +47,7 @@ function Content() {
       </section>
       <ExperienceTimelineComponent />
       <ProjectsComponent />
-      <section id='aboutme-section-wrapper'>
-        <div className='section-heading'>
-          About Me
-        </div>
-      </section>
+      <AboutMeComponent />
     </div>
   )
 }

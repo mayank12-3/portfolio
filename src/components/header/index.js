@@ -4,6 +4,11 @@ import './index.scss'
 
 function toggleMobileNavBar(value) {
   document.getElementById("mobile-view-navbar").style.height = value
+  if (value === '100%') {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = 'unset'
+  }
 }
 
 function Header() {
@@ -22,7 +27,7 @@ function Header() {
         <ul>
           {headerTabs.map((tab, index) =>
             <li key={index}>
-              <a className='nav-link toggle-dark-mode' href={tab.href} data-text='Home'>{tab.tabName}</a>
+              <a className='nav-link toggle-dark-mode' href={tab.href} data-text={tab.tabName}>{tab.tabName}</a>
             </li>
           )}
         </ul>

@@ -15,7 +15,7 @@ export const App = () => {
     window.addEventListener('scroll', scrollFunc)
     setTimeout(() => {
       loaderStatus(false)
-    }, 2000)
+    }, 2500)
   })
   return (
     <div className='App'>

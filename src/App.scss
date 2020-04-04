@@ -8,28 +8,17 @@ body {
   color: black;
   background: white;
   font-size: 16.8px;
+  .blur-content {
+    transition: .5 ease-in;
+    filter: blur(2px);
+  }
+  .disablescroll {
+    overflow: hidden;
+  }
 }
 
-// .toggleColor, .toggleColor a, .toggleColor a:hover {
-//   color: white;
-//   background: black;
-//   .nav-last-item > div {
-//     background: white !important;
-//   }
-// }
-
-a {
-  color: black;
-  background: white;
-  outline: none;
-}
-a:hover {
-  color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  scroll-behavior: smooth;
 }
 
 .page-loader {

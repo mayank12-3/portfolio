@@ -3,7 +3,7 @@ import {
   Layout,
   Header,
   Content,
-  // Footer
+  Footer
 } from './components'
 import './App.scss'
 import { scrollFunc } from './components/animationFunc'
@@ -29,6 +29,7 @@ export const App = () => {
         : <Layout>
           <Header />
           <Content />
+          <Footer />
         </Layout>
       }
     </div>

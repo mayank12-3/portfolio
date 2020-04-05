@@ -16,6 +16,11 @@ body {
     overflow: hidden;
   }
 }
+@media (max-width: 500px) {
+  body {
+    font-size: 15px !important;
+  }
+}
 
 * {
   scroll-behavior: smooth;
@@ -50,7 +55,13 @@ body {
 .sticky {
   position: sticky;
   background: black;
-  top: 115px;
+  top: 100px;
   width: 100%;
   z-index: 1;
+}
+
+@media (max-width: 500px) {
+  .sticky {
+    top: 90px !important;
+  }
 }

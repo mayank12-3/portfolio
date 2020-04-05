@@ -8,12 +8,25 @@ import {
   SectionContent,
   PictureComp
 } from '../commonComponents'
+import facebookLogo from './icons/facebook.png'
+import githubLogo from './icons/github.png'
+import linkedinLogo from './icons/linkedin.png'
+import mailLogo from './icons/mail.png'
 import './index.scss'
 
 function Content() {
   return (
     <div className='main-content-wrapper'>
-      <div className='right-sidebar'><marquee><h3>Retarded</h3></marquee></div>
+      <div className='right-sidebar marquee-sidebar'><marquee>Retarded</marquee></div>
+      <div className='left-sidebar marquee-sidebar'>
+        <div className='toggle-dark-mode' />
+        <ul>
+          <li><img src={facebookLogo} /></li>
+          <li><img src={githubLogo} /></li>
+          <li><img src={linkedinLogo} /></li>
+          <li><img src={mailLogo} /></li>
+        </ul>
+      </div>
       <section className='intro-section'>
         <SectionHeading>
           Hi, I'm <br />

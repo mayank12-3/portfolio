@@ -1,22 +1,56 @@
 .main-content-wrapper {
-  height: 400px;
-  margin: 115px 0;
+  height: max-content;
+  margin-top: 115px;
   section {
-    padding-top: 100px;
+    padding-top: 60px;
     min-height: 100vh;
     position: relative;
   }
-  .right-sidebar {
+  .secondary-heading {
+    font-size: 25px;
+  }
+  .marquee-sidebar {
+    font-size: 25px;
     position: fixed;
-    right: -50px;
-    width: 150px;
-    height: 50px;
     top: 50%;
     text-align: center;
-    transform: rotate(-90deg);
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotate(-90deg);
+  }
+  .right-sidebar {
+    right: -50px;
+    width: 150px;
+    height: 50px;
+  }
+  .left-sidebar {
+    width: 100vh;
+    height: 50px;
+    left: -22rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      transform: rotate(90deg);
+      li {
+        margin-bottom: 10px;
+      }
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid white;
+      }
+    }
+    div {
+      height: 3px;
+      width: 72%;
+      position: absolute;
+      background: black;
+      left: -90px;
+      top: 30%;
+    }
   }
   .intro-section {
     height: auto;
@@ -111,7 +145,6 @@
         width: 60%;
         padding-left: 8%;
         .project-title {
-          font-size: 25px;
           margin-bottom: 8px;
         }
         .project-content {
@@ -152,24 +185,27 @@
   }
 
   #aboutme-section-wrapper {
+    min-height: fit-content;
     .aboutme-container {
       display: flex;
       .about-section_image {
-        margin-top: 30px;
-        margin-right: 50px;
-        height: 250px;
-        width: 250px;
-        background-image: url('./profilepic.jpg');
-        border-radius: 50%;
-        background-size: cover;
-        background-position: 25px;
-        filter: blur(1.5px);
-        transition: 0.5s ease-in;
-        &:hover {
-          filter: blur(0);
+        width: 40%;
+        div {
+          height: 200px;
+          width: 200px;
+          background-image: url('./profilepic.jpg');
+          border-radius: 50%;
+          background-size: cover;
+          background-position: 25px;
         }
+        // filter: blur(1.5px);
+        // transition: 0.5s ease-in;
+        // &:hover {
+        //   filter: blur(0);
+        // }
       }
       p {
+        width: 60%;
         align-self: center;
       }
     }
@@ -182,13 +218,63 @@
         }
       }
     }
-
+    .tech-stack-wrapper {
+      margin-top: 3rem;
+      .secondary-heading {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .tech-stack-container {
+        display: flex;
+        justify-content: space-around;
+        .tech-heading-label {
+          font-size: 20px;
+        }
+        ul {
+          list-style: none;
+          padding-left: 0;
+          li {
+            margin: 0;
+          }
+        }
+      }
+    }
+    @media (max-width: 800px) and (min-width: 600px) {
+      .tech-stack-container {
+        justify-content: space-between !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .tech-stack-container {
+        display: block !important;
+        ul {
+          padding-left: 15px !important;
+        }
+      }
+    }
   }
 }
 
+@media (min-width: 500px) and (max-width: 700px) {
+  .main-content-wrapper {
+    margin-top: 90px;
+  }
+}
+
+// @media (max-width: 1000px) and (min-width: 600px) {
+//   section {
+//     min-height: calc(100vh - 100px) !important;
+//     padding: 50px 0 !important;
+//   }
+// }
+
+
 @media (max-width: 500px) {
+  .main-content-wrapper {
+    margin-top: 80px;
+  }
   section {
-    min-height: calc(100vh - 60px) !important;
-    padding: 50px 0 !important;
+    min-height: calc(100vh - 150px) !important;
+    // padding: 30px 0 !important;
   }
 }

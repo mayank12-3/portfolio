@@ -14,6 +14,7 @@ export const toggleColor = () => {
       .dark-mode { background: black !important; color: white !important; }
       .toggle-dark-mode { background: white !important; color: black !important; }`
   }
+	let navIcon = document.getElementById('nav-light-icon')
   let body = document.getElementsByTagName('body')[0]
   if (pos.top <= 120 && !document.getElementById('darkmodeStyle-sheet')) {
     document.body.appendChild(stylesheet)
@@ -21,6 +22,15 @@ export const toggleColor = () => {
     pos.top > 120 && document.getElementById('darkmodeStyle-sheet') &&
     document.body.removeChild(stylesheet)
   }
+	if (document.getElementById('darkmodeStyle-sheet')) {
+		navIcon.innerHTML = '☾'
+		navIcon.style.fontSize = '18px'
+		navIcon.style.right = '8px'
+	} else {
+		navIcon.innerHTML = '☼'
+		navIcon.style.fontSize = '20px'
+		navIcon.style.right = '10px'
+	}
 }
 
 export const overrideScrollhander = () => {
@@ -35,14 +45,16 @@ export const overrideScrollhander = () => {
 export const stickySectionHeader = () => {
 	let sectionsList = Array.from(document.getElementsByTagName('section'))
 	sectionsList = sectionsList.slice(1) // exp, work, about me
-
+	var eleemtn = sectionsList[0].getBoundingClientRect()
+	var Y = eleemtn.y
+	console.log('my pos: ', Y)
 	sectionsList.map(ele => {
 		const pos = ele.getBoundingClientRect()
 		let posY = pos.y
 		let stickyNode = ele.children[0]
-		if (posY <= 20 && !stickyNode.className.includes('sticky')) {
+		if (posY <= 40 && !stickyNode.className.includes('sticky')) {
 			stickyNode.className += ' sticky'
-		} else if (posY > 20 && stickyNode.className.includes('sticky')) {
+		} else if (posY > 40 && stickyNode.className.includes('sticky')) {
 			stickyNode.className = 'section-heading'
 		}
 	})

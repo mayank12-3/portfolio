@@ -16,7 +16,7 @@ function Header() {
     { tabName: 'Home', href: '#' },
     { tabName: 'Experience', href: '#experience-section-wrapper' },
     { tabName: 'Work', href: '#work-section-wrapper' },
-    { tabName: 'About Me', href: '#aboutme-section-wrapper' },
+    { tabName: 'Bio', href: '#aboutme-section-wrapper' },
   ]
   return (
     <React.Fragment>
@@ -33,6 +33,7 @@ function Header() {
         </ul>
       </div>
       <nav className='navbar fixed-top dark-mode'>
+        <div id='nav-light-icon' className='dark-mode'>☼</div>
         <a className='navbar-brand dark-mode' href='#'><img src={logo} alt='logo' /></a>
         <ul className='nav justify-content-end overlay-content'>
           {headerTabs.map((tab, index) =>

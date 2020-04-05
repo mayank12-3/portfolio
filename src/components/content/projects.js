@@ -8,7 +8,7 @@ import {
 import './index.scss'
 
 export const ProjectTitle = (props) =>
-  <div className='project-title'>{props.children}</div>
+  <div className='project-title secondary-heading'>{props.children}</div>
 
 export const ProjectContent = (props) =>
   <div className='project-content'>

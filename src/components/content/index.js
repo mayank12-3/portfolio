@@ -7,6 +7,7 @@ import {
   SectionHeading,
   SectionContent
 } from '../commonComponents'
+import profilePic from '../../assets/profilepic-2.jpg'
 import './index.scss'
 
 const Content = () => {
@@ -51,12 +52,12 @@ const Content = () => {
         </div>
         <br />
         <div className='intro-section_image'>
-          <div className='picture__outline' />
-          <picture>
-            <source media='(min-width: 850px)' srcSet='https://i.picsum.photos/id/866/300/300.jpg' />
-            <source media='(max-width: 840px)' srcSet='https://i.picsum.photos/id/866/260/260.jpg' />
-            <img src='https://i.picsum.photos/id/866/260/260.jpg' alt='Profilepic' style={{ width: 'auto' }} />
-          </picture>
+          <div className='profile-imag-wrapper'>
+            <div className='picture__outline' />
+            <picture>
+              <img src={profilePic} alt='Profilepic' />
+            </picture>
+          </div>
         </div>
       </section>
       <ExperienceTimelineComponent />

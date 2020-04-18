@@ -3,10 +3,10 @@ import {
   SectionHeading,
   SectionContent
 } from '../commonComponents'
-import facebook from './icons/facebook.png'
-import github from './icons/github.png'
-import linkedin from './icons/linkedin.png'
-import mail from './icons/mail.png'
+import facebook from '../../assets/icons/facebook.png'
+import github from '../../assets/icons/github.png'
+import linkedin from '../../assets/icons/linkedin.png'
+import mail from '../../assets/icons/mail.png'
 import './index.scss'
 
 const AboutMeComponent = () => {

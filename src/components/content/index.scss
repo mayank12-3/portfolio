@@ -149,31 +149,58 @@
   #work-section-wrapper {
     .project-container {
       display: flex;
-      .project-preview {
-        width: 40%;
-        max-width: 400px;
-      }
-      .project-info {
-        width: 60%;
-        padding-left: 8%;
-        .project-title {
-          margin-bottom: 8px;
+      .project-slider {
+        div {
+          width: 80px;
+          height: 3.5px;
+          border: .5px solid white;
+          margin-bottom: 30px;
+          transition: .5s;
+          position: relative;
+          &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: -3.8px;
+            right: -9px;
+          }
         }
-        .project-content {
-          .btn {
-            padding: 10px 50px 10px 20px;
-            margin-top: 20px;
-            span::after {
-              content: "→";
-              position: absolute;
-              font-size: 30px;
-              right: 20px;
-              top: -3px;
-              transition: .25s ease-in;
-            }
-            &:hover {
-              ::after {
-                right: 10px;
+        .active, .active::after {
+          background: white;
+        }
+      }
+      .project-wrapper {
+        width: 100%;
+        .project-preview {
+          width: 40%;
+          max-width: 400px;
+        }
+        .project-info {
+          width: 60%;
+          padding-left: 8%;
+          .project-title {
+            margin-bottom: 8px;
+            line-height: .5;
+          }
+          .project-content {
+            .btn {
+              padding: 10px 50px 10px 20px;
+              margin-top: 20px;
+              span::after {
+                content: "→";
+                position: absolute;
+                font-size: 30px;
+                right: 20px;
+                top: -3px;
+                transition: .25s ease-in;
+              }
+              &:hover {
+                ::after {
+                  right: 10px;
+                }
               }
             }
           }
@@ -292,16 +319,12 @@
     .tech-stack-wrapper {
       // display: none;
       margin-top: 3rem;
-      .secondary-heading {
-        text-align: center;
-        margin-bottom: 1rem;
+      .tech-stack-container > div {
+        margin-right: 10rem;
       }
       .tech-stack-container {
+        margin-top: 8px;
         display: flex;
-        justify-content: space-around;
-        .tech-heading-label {
-          font-size: 20px;
-        }
         position: relative;
         ul {
           list-style: none;

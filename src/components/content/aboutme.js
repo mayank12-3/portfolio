@@ -31,7 +31,7 @@ const AboutMeComponent = () => {
         </SectionContent>
       </div>
       <div className='tech-stack-wrapper'>
-        <div className='secondary-heading'>Tech Stack</div>
+        <div>Following are the tech stack i'm worked on</div>
         <div className='tech-stack-container'>
           <div>
             <div className='tech-heading-label'>Language</div>

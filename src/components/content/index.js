@@ -5,38 +5,44 @@ import AboutMeComponent from './aboutme'
 import {
   Button,
   SectionHeading,
-  SectionContent,
-  PictureComp
+  SectionContent
 } from '../commonComponents'
-import facebookLogo from './icons/facebook.png'
-import githubLogo from './icons/github.png'
-import linkedinLogo from './icons/linkedin.png'
-import mailLogo from './icons/mail.png'
 import './index.scss'
 
-function Content() {
+const Content = () => {
   return (
     <div className='main-content-wrapper'>
-      <div className='right-sidebar marquee-sidebar'><marquee>Retarded</marquee></div>
-      <div className='left-sidebar marquee-sidebar'>
-        <div className='toggle-dark-mode' />
-        <ul>
-          <li><img src={facebookLogo} /></li>
-          <li><img src={githubLogo} /></li>
-          <li><img src={linkedinLogo} /></li>
-          <li><img src={mailLogo} /></li>
-        </ul>
+      <div className='right-sidebar marquee-sidebar'>
+        <marquee direction='up'>
+          R<br/>
+          e<br/>
+          t<br/>
+          a<br/>
+          r<br/>
+          d<br/>
+          e<br/>
+          d
+        </marquee>
       </div>
       <section className='intro-section'>
-        <SectionHeading>
-          Hi, I'm <br />
-          Deepak Chaudhari<br />
-          I build things for the web
-        </SectionHeading>
-        <br /><br />
+        <div className='section-heading'>
+          <div className='text1'>
+            Hi, I'm
+          </div>
+          <div className='text2'>
+            Deepak Chaudhari
+          </div>
+          <div className='text3'>
+            <div>I build things for</div>
+            <div>the web</div>
+          </div>
+        </div>
+        <br />
         <SectionContent className='intro-section_content light-text'>
           I'm a software engineer based in Mumbai, who enjoys building things that live on the internet.
           I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficiency.
+          <br /><br/>
+          Shortly after graduating from VJTI, I joined the engineering team at Servify where I work on a wide variety of interesting and meaningful projects on a daily basis.
         </SectionContent>
         <div>
           <Button className='btn-outline'>
@@ -44,11 +50,6 @@ function Content() {
           </Button>
         </div>
         <br />
-        {/*
-          <p className='intro-section_content'>
-            Shortly after graduating from VJTI, I joined the engineering team at Servify where I work on a wide variety of interesting and meaningful projects on a daily basis.
-          </p>
-          */}
         <div className='intro-section_image'>
           <div className='picture__outline' />
           <picture>

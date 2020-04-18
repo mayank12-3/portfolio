@@ -3,10 +3,13 @@ import {
   SectionHeading,
   SectionContent
 } from '../commonComponents'
-// import profilepic from './profilepic.jpg'
+import facebook from './icons/facebook.png'
+import github from './icons/github.png'
+import linkedin from './icons/linkedin.png'
+import mail from './icons/mail.png'
 import './index.scss'
 
-function AboutMeComponent() {
+const AboutMeComponent = () => {
   return (
     <section id='aboutme-section-wrapper'>
       <SectionHeading>Bio</SectionHeading><br /><br />
@@ -16,6 +19,15 @@ function AboutMeComponent() {
         </div>
         <SectionContent className='dark-text'>
           Something about myself hmmmmm.......
+          <div className='social-links-container'>
+            {[facebook, github, linkedin, mail].map(imageSrc => (
+              <div class='img-wrapper' >
+                <div class='imageBox'>
+                    <img src={imageSrc} alt='social-img' />
+                </div>
+              </div>
+            ))}
+          </div>
         </SectionContent>
       </div>
       <div className='tech-stack-wrapper'>

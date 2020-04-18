@@ -15,7 +15,6 @@ export const toggleColor = () => {
       .toggle-dark-mode { background: white !important; color: black !important; }`
   }
 	let navIcon = document.getElementById('nav-light-icon')
-  let body = document.getElementsByTagName('body')[0]
   if (pos.top <= 120 && !document.getElementById('darkmodeStyle-sheet')) {
     document.body.appendChild(stylesheet)
   } else {
@@ -45,9 +44,6 @@ export const overrideScrollhander = () => {
 export const stickySectionHeader = () => {
 	let sectionsList = Array.from(document.getElementsByTagName('section'))
 	sectionsList = sectionsList.slice(1) // exp, work, about me
-	var eleemtn = sectionsList[0].getBoundingClientRect()
-	var Y = eleemtn.y
-	console.log('my pos: ', Y)
 	sectionsList.map(ele => {
 		const pos = ele.getBoundingClientRect()
 		let posY = pos.y
@@ -57,5 +53,6 @@ export const stickySectionHeader = () => {
 		} else if (posY > 40 && stickyNode.className.includes('sticky')) {
 			stickyNode.className = 'section-heading'
 		}
+		return false
 	})
 }

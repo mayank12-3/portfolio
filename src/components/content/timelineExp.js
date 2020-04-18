@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 
-function ExperienceTimelineComponent() {
+const ExperienceTimelineComponent = () => {
   return (
     <section id='experience-section-wrapper'>
       <div className='section-heading'>

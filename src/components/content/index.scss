@@ -13,49 +13,55 @@
     font-size: 25px;
     position: fixed;
     top: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(-90deg);
+    padding: 0px 15px;
+    transform: translateY(-50%);
   }
   .right-sidebar {
-    right: -50px;
-    width: 150px;
-    height: 50px;
-  }
-  .left-sidebar {
-    width: 100vh;
-    height: 50px;
-    left: -22rem;
-    ul {
-      list-style: none;
-      padding: 0;
-      transform: rotate(90deg);
-      li {
-        margin-bottom: 10px;
-      }
-      img {
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background: white;
-        border: 2px solid white;
-      }
-    }
-    div {
-      height: 3px;
-      width: 72%;
-      position: absolute;
-      background: black;
-      left: -90px;
-      top: 30%;
-    }
+    right: 0px;
+    width: 50px;
+    height: 250px;
   }
   .intro-section {
     height: auto;
     .section-heading {
       width: 60%;
+      overflow: hidden;
+      letter-spacing: 1px !important;
+      // max-width: 500px;
+    }
+
+    // .text3 div {
+    //   border-right: 2px solid black;
+    //   animation: typewriterEffect 4s steps(40) 1s 1 normal both,
+    //   blinkTextCursor 500ms steps(40) infinite normal;
+    //   white-space: nowrap;
+    //   overflow: hidden;
+    // }
+    @keyframes typewriterEffect {
+      from { width: 0% }
+      to { width: 100% }
+    }
+    @keyframes blinkTextCursor {
+      from { border-right-color: black; }
+      to { border-right-color: transparent; }
+    }
+
+    @keyframes slideRightAnimation {
+      to {
+        transform:translateX(0);
+      }
+    }
+    .text1 {
+      animation: 1s slideRightAnimation .3s forwards;
+      transform:translateX(-100%);
+    }
+    .text2 {
+      animation: 1s slideRightAnimation 1.3s forwards;
+      transform:translateX(-100%);
+    }
+    .text3 {
+      animation: 1s slideRightAnimation 2.3s forwards;
+      transform:translateX(-100%);
     }
     @media (max-width: 1000px) {
       .section-heading {
@@ -209,6 +215,62 @@
         align-self: center;
       }
     }
+    .social-links-container {
+      position: relative;
+      margin: 2rem 0;
+      display: flex;
+      max-width: 800px;
+      .img-wrapper{
+          width: 50px;
+          height: 50px;
+          border: 2px solid white;
+          border-radius: 5px;
+          margin-right: 10%;
+          box-shadow: 12px 12px 10px rgba(228, 223, 223, 0.41);
+          transform: rotateY(0deg);
+          &::before{
+            content: '';
+            width: 8px;
+            height: 108%;
+            border: 2px solid white;
+            border-radius: 5px;
+            position: absolute;
+            top: 0.5px;
+            right: -7px;
+            transform: skewY(45deg);
+          }
+          &::after{
+            content: '';
+            width: 108%;
+            height: 8px;
+            border: 2px solid white;
+            border-radius: 5px;
+            position: absolute;
+            bottom: -7px;
+            transform: skewX(45deg);
+          }
+          .imageBox{
+            height: 100%;
+            width: 100%;
+            transition: all .3s;
+            background: white;
+            position: relative;
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              padding: 5px;
+              width: 100%;
+            }
+          }
+          .imageBox:hover {
+            cursor: pointer;
+            border-radius: 5px;
+            transform: translate(-10px, -10px);
+          }
+      }
+    }
     @media (max-width: 700px) {
       .aboutme-container {
         display: block;
@@ -216,9 +278,13 @@
           margin-bottom: 30px;
           margin-right: 0;
         }
+        p {
+          width: 100%;
+        }
       }
     }
     .tech-stack-wrapper {
+      // display: none;
       margin-top: 3rem;
       .secondary-heading {
         text-align: center;
@@ -230,9 +296,20 @@
         .tech-heading-label {
           font-size: 20px;
         }
+        position: relative;
+        > div {
+          border: 2px solid white;
+          &:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+          }
+        }
         ul {
           list-style: none;
           padding-left: 0;
+          margin-top: 2px;
           li {
             margin: 0;
           }
@@ -252,6 +329,7 @@
         }
       }
     }
+
   }
 }
 

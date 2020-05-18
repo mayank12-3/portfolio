@@ -6,4 +6,4 @@
 - Bootstrap
 
 
-### Will be re-working on the design & content as well
+### Currenty working on the design changes & content as well

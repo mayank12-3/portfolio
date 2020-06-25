@@ -5,8 +5,8 @@ window.onload = () => {
   document.body.appendChild(script)
   script.onload = () => {
     /* ------- Global Var ------- */
-      const RESUME_LINK = 'https://drive.google.com/file/d/1vJkx32zQEIQcfKZjkQxF3N4yWbVKt1Xn/view?usp=sharing'
-      const GITHUB = 'https://github.com/mayank12-3'
+    const RESUME_LINK = 'https://drive.google.com/file/d/1vJkx32zQEIQcfKZjkQxF3N4yWbVKt1Xn/view?usp=sharing'
+    const GITHUB = 'https://github.com/mayank12-3'
     /* ------- END - Global Var ------- */
 
     // hide loader
@@ -27,8 +27,6 @@ window.onload = () => {
           HEADING_MAX_WIDTH = 310
         }
         heading_text_wrapper.style.width = `${HEADING_MAX_WIDTH}px`
-        // heading_text_wrapper.style.borderBottomColor = 'red'
-        // heading_text_wrapper.style.borderBottomStyle = 'solid'
 
         heading_text_list.map((heading, idx) => {
           heading.style.width = `${HEADING_MAX_WIDTH}px`
@@ -117,11 +115,11 @@ window.onload = () => {
         nav_item_divs.forEach((navItem, index) => {
           if (active_NavItem_Index === index) {
             navItem.className += ' nav-item--active'
-            const activeSection = document.getElementById(nav_item_divs[active_NavItem_Index].ariaLabel)
-            activeSection && activeSection.scrollIntoView()
 
             // to be updated with IntersectionObserver
             if (scrolled_Via_Btn) {
+              const activeSection = document.getElementById(nav_item_divs[active_NavItem_Index].ariaLabel)
+              activeSection && activeSection.scrollIntoView()
               window.btnSrollTrigger = setInterval(() => {
                 const root_pos_top = root_container.getBoundingClientRect().top
                 let activeElePos_top = activeSection.getBoundingClientRect().top
@@ -186,7 +184,7 @@ window.onload = () => {
         })
       }, {
         // threshold: .5,
-        rootMargin: '-30% 0% -30% 0%'
+        rootMargin: '0px 0px -100px 0px'
       })
 
       fadeIn_elements.forEach(ele => {
@@ -199,6 +197,17 @@ window.onload = () => {
 
 
       /* ------------- Action btns ------------- */
+      const eyeBalls = document.querySelectorAll('.eyeball')
+      document.onmousemove = (event) => {
+        const posX = event.clientX * 100 / window.innerWidth + '%'
+        const posY = event.clientY * 100 / window.innerHeight + '%'
+        eyeBalls.forEach(eyeball => {
+          eyeball.style.left = posX
+          eyeball.style.top = posY
+          eyeball.style.transform = `translate(-${posX}, -${posY})`
+        })
+      }
+
       const getInTouch_btn = document.getElementById('getIn-touch-btn')
       getInTouch_btn.onclick = () => {
         Array.from(nav_item_divs).map(item => {
@@ -229,7 +238,6 @@ window.onload = () => {
           changeTheme_btn.innerText = 'Dark Mode'
         }
       }
-      // mailOpt-btn
 
     }, 1000)
   }

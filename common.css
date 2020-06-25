@@ -1,15 +1,14 @@
 :root {
 
   /* ----- colors ----- */
-  --green: #0fb36c;
+  --pumpkin: #ff793f;
   --white: white;
   --black: black;
   --light-black: #333;
-  --red: red;
   --light-grey: #25252545;
   --dark-grey: #dfdcdc2b;
 
-  --primary-color: var(--green);
+  --primary-color: var(--pumpkin);
   --secondary-color: var(--white);
   --background-color: var(--black);
   --loader-color: var(--white);
@@ -39,10 +38,10 @@
 }
 .dark-mode {
 
-  --primary-color: var(--green);
+  --primary-color: var(--pumpkin);
   --secondary-color: var(--light-black);
   --background-color: var(--white);
-  --active-color: var(--red);
+  --active-color: var(--pumpkin);
   --project-content-color: var(--light-grey);
   --loader-color: var(--primary-color);
   --theme-font-weight: initial;
@@ -60,7 +59,7 @@
 
 }
 
-.fg_green {
+.fg_pumpkin {
   color: var(--primary-color);
   font-weight: var(--theme-font-weight);
 }

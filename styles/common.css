@@ -166,7 +166,6 @@ hr.appear{
   width: 150px;
   transition: width .6s ease-in-out;
 }
-
 main::-webkit-scrollbar, article::-webkit-scrollbar {
   /* width: 5px; */
   /* background: var(--primary-color); */
@@ -175,8 +174,11 @@ main::-webkit-scrollbar, article::-webkit-scrollbar {
 main::-webkit-scrollbar-track, article::-webkit-scrollbar-track {
   background: transparent;
 }
-.scrollbar-track {
-  display: none !important;
+.note-txt {
+  margin: 0;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
 }
 @media (min-width: 600px) and (max-width: 900px) {
   .body-layout {
@@ -189,6 +191,10 @@ main::-webkit-scrollbar-track, article::-webkit-scrollbar-track {
   }
   .sticky-header {
     top: -1px;
+  }
+  .note-txt {
+    bottom: 1rem;
+    right: 1rem;
   }
   section {
     margin-bottom: 4rem;
@@ -307,7 +313,6 @@ button::before {
 .hex-content::after {
   transform: rotate(-60deg);
 }
-
 /* ------------ loader ------------ */
 .loader-wrapper {
   position: absolute;

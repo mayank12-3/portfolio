@@ -39,10 +39,6 @@ header .header-logo .logo-arrow-icons {
   display: grid;
   place-content: center;
 }
-@media (min-width: 600px) and (max-width: 900px) {
-}
-@media (max-width: 600px) {
-}
 /* ------------ END - Header ------------ */
 
 
@@ -110,6 +106,15 @@ nav .nav-item {
   width: 7rem !important;
   padding: 0 .8rem !important;
   color: var(--white) !important;
+}
+@media (min-height: 600px) and (max-width: 600px) {
+  main aside {
+    bottom: 3.5rem;
+    left: -1rem;
+  }
+  nav {
+    padding: 1rem;
+  }
 }
 /* ------------ END - Side Bar ------------ */
 

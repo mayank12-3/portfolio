@@ -204,6 +204,16 @@ main::-webkit-scrollbar-track, article::-webkit-scrollbar-track {
   }
 }
 
+@media (max-height: 650px) {
+  main aside {
+    display: none;
+  }
+  .footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 button {
   width: 250px;
   padding: 1rem;

@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+/icons/theme-color-icons
 
 # misc
 .DS_Store

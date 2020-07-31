@@ -9,25 +9,27 @@
     <meta name='keywords' content='Deepak, Chaudhari, Deepak Chaudhari, front-end developer,
       React Js, javascript, Mumbai, Resume, Portfolio'
     />
+    <title lang='en'>Deepak | Front-end developer</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173172606-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173172606-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-173172606-1');
     </script>
-    <link rel='dns-prefetch stylesheet'
-      href='https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap' />
+    -->
+    <!-- <link rel='dns-prefetch stylesheet'
+      href='https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap' /> -->
     <link rel='shortcut icon' type='image/png' href='./icons/favicon.png' />
     <link rel='stylesheet' type='text/css' href='./styles/common.css' />
     <link rel='stylesheet' type='text/css' href='./styles/main.css' />
-    <title lang='en'>Deepak | Front-end developer</title>
   </head>
   <body class='dark-mode'>
     <div class='loader-wrapper'>
       <div class='loader'><div>DC</div></div>
     </div>
+    <div id='theme-mode'>☼</div>
     <header class='body-layout'>
       <div>
         <div class='header-logo'>
@@ -82,7 +84,11 @@
             <p class='intro-section_content fade-in'>
               I'm a software engineer based in Mumbai, B.Tech specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
               In my spare time, you can probably find me <span class='fg-primary-clr'><del>cooking</del></span> eating food, exploring somewhere or working on my personal projects.
+              <br />
+              (ɔ◔‿◔)ɔ&nbsp;
             </p>
+            <div id='theming-color'>
+            </div>
             <div class='buttons-container fade-in'>
               <button class='merge-2_col' id='view-work-btn'>
                 <span>View my work</span>
@@ -92,7 +98,7 @@
         </section>
         <section id='projects-section'>
           <h1 class='section-heading sticky-header'>
-            Things i've build<hr />
+            &lt;Things i've build /&gt;<hr />
           </h1>
           <div class='container'>
             <div class='project slide-in from-bottom'>
@@ -159,7 +165,9 @@
           </div>
         </section>
         <section id='timeline-section'>
-          <h1 class='section-heading sticky-header'>Experience Timeline<hr /></h1>
+          <h1 class='section-heading sticky-header'>
+            &lt;Experience Timeline /&gt;<hr />
+          </h1>
           <div class='container'>
             <div id='timeline-container'>
               <div class='timeline-card'>
@@ -208,8 +216,8 @@
           </div>
         </section>
         <section id='about-me-section'>
-          <h1 class='section-heading sticky-header'>About Me<hr />
-            <!-- <img src='./icons/icons8-account-50.png' /> -->
+          <h1 class='section-heading sticky-header'>
+            &lt;About Me /&gt;<hr />
           </h1>
           <div class='container'>
             <div class='about-me-info'>
@@ -234,32 +242,50 @@
           </div>
         </section>
         <section id='skills-section'>
-          <h1 class='section-heading sticky-header'>Skills <hr /></h1>
+          <h1 class='section-heading sticky-header'>
+            &lt;Skills /&gt;<hr />
+          </h1>
           <div class='container'>
+            <!-- HTML5, CSS3, JS, ReactJS, Bootstrap, Git, JQuery -->
             <div>
-              <div class='hex-box'>
+              <div class='hex-box' data-set='HTML5'>
                 <div class='hex-content'>
-                  <img alt='html5-img' src='./icons/html5-color.svg' />
+                  <img alt='html5-icon' src='./icons/html5-color.svg' />
                 </div>
             	</div>
-              <div class='hex-box'>
+              <div class='hex-box' data-set='CSS3'>
                 <div class='hex-content'>
-                  <img alt='css3-img' src='./icons/css3-color.svg' />
+                  <img alt='css3-icon' src='./icons/css3-color.svg' />
                 </div>
             	</div>
-              <div class='hex-box'>
+              <div class='hex-box' data-set='Javascript'>
                 <div class='hex-content'>
-                  <img alt='javascript-img' src='./icons/js_dark-color.svg' />
+                  <img alt='javascript-icon' src='./icons/js_dark-color.svg' />
                 </div>
             	</div>
-              <div class='hex-box'>
+              <div class='hex-box' data-set='ReactJS'>
                 <div class='hex-content'>
-                  <img alt='react-img' src='./icons/reactjs-color.svg' />
+                  <img alt='react-icon' src='./icons/reactjs-color.svg' />
                 </div>
             	</div>
-              <div class='hex-box'>
+              <div class='hex-box' data-set='Bootstrap'>
                 <div class='hex-content'>
-                  <img alt='javascript-img' src='./icons/bootstrap-color.svg' />
+                  <img alt='javascript-icon' src='./icons/bootstrap-color.svg' />
+                </div>
+            	</div>
+              <div class='hex-box' data-set='Git'>
+                <div class='hex-content'>
+                  <img alt='git-icon' src='./icons/git-icon.svg' />
+                </div>
+            	</div>
+              <div class='hex-box' data-set='JQuery'>
+                <div class='hex-content full-height'>
+                  <img alt='git-icon' src='./icons/jquery_min-icon.png' />
+                </div>
+            	</div>
+              <div class='hex-box' data-set='Adobe XD'>
+                <div class='hex-content full-height'>
+                  <img alt='adobe_xd-icon' src='./icons/adobe_xd-icon.svg' />
                 </div>
             	</div>
             </div>
@@ -269,7 +295,9 @@
           </div>
         </section>
         <section id='contact-me-section'>
-          <h1 class='section-heading sticky-header'>Get in touch<hr /></h1>
+          <h1 class='section-heading sticky-header'>
+            &lt;Get in touch /&gt;<hr />
+          </h1>
           <div class='container'>
             <p>
               Always looking for new opportunities & challenges. If you have any, don't hesitate, feel free to drop a mail. I will try my best to respond as soon as possible.

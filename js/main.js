@@ -160,6 +160,7 @@ const initialize = () => {
   const gitHub_viewMore_btn = document.getElementById('viewMore-github-btn')
   const mailTo_Btn = document.getElementById('mailOpt-btn')
   const viewResume_btn = document.getElementById('resumeOpt-btn')
+  const toggleTheme = document.getElementById('theme-mode')
 
   goToMyWorkBtn.onclick = () => {
     Array.from(nav_item_divs).map(item => { item.className = 'nav-item' })
@@ -173,6 +174,16 @@ const initialize = () => {
   mailTo_Btn.onclick = () => window.location = MAIL_LINK
 
   viewResume_btn.onclick = () => window.open(RESUME_LINK)
+
+  toggleTheme.onclick = () => {
+    if (document.body.classList.contains('dark-mode')) {
+      document.body.classList.remove('dark-mode')
+      toggleTheme.innerHTML = '☾'
+    } else {
+      document.body.classList.add('dark-mode')
+      toggleTheme.innerHTML = '☼'
+    }
+  }
   /* ------------- END - Action Buttons --------------- */
 }
 
@@ -193,5 +204,21 @@ window.onload = () => {
   let script = document.createElement('script')
   setTimeout(() => {
     initialize()
+    // renderThemeOptions()
   }, 1000)
+}
+
+renderThemeOptions = () => {
+  const themingOptions = ['#ea2845', 'yellow', 'blue', '#0fb36c']
+  const ele = document.querySelector('#theming-color')
+  themingOptions.map(clr => {
+    let themediv = document.createElement('div')
+    themediv.setAttribute('data-set', clr)
+    themediv.style.background = clr
+    themediv.onclick = () => changeTheme(clr)
+    ele.appendChild(themediv)
+  })
+}
+const changeTheme = (clr) => {
+  document.documentElement.style.setProperty('--primary-color', clr)
 }

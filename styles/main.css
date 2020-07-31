@@ -48,7 +48,7 @@ main aside {
   left: 3.2rem;
   top: 35vh;
   transform: rotate(90deg);
-  z-index: 15;
+  z-index: 10;
 }
 
 @media (max-width: 900px) {
@@ -201,6 +201,25 @@ nav .nav-item {
   transform: translate(-50%, -50%);
   position: absolute;
 }
+#theming-color {
+  display: flex;
+  margin: 3rem 0;
+}
+#theming-color div {
+  height: 20px;
+  width: 20px;
+  margin: 0 1rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  background-color: attr(data-set);
+}
+#theming-color div:nth-child(1) {
+  margin-left: 0;
+}
+#theming-color div:nth-child(4) {
+  margin-right: 0;
+}
 @media screen and (max-width: 900px) {
   .landing-page_img {
     display: none;
@@ -223,7 +242,7 @@ nav .nav-item {
   .intro-headings-wrapper h2 {
     text-align: center;
   }
-  .intro-section_content {
+  .intro-section_content, #theming-color {
     margin: 2rem 0;
   }
   #home-page-section .container {
@@ -363,7 +382,7 @@ nav .nav-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 3rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 2.5rem;
 }
 .timeline-card {
   background: var(--card-background-color);
@@ -416,6 +435,9 @@ nav .nav-item {
   .timeline-card .timeline-heading {
     padding: 2rem 1rem;
   }
+  #timeline-container {
+    grid-row-gap: 1rem;
+  }
 }
 /* ------------ END - Experience section ------------ */
 
@@ -459,45 +481,68 @@ nav .nav-item {
   place-content: center
 }
 #skills-section .container > div {
-  display: flex;
-  max-width: 500px;
-  flex-wrap: wrap;
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   place-content: center;
+  grid-row-gap: 2.8rem;
 }
 .note-text {
   position: absolute;
   right: 2rem;
   bottom: 0rem;
 }
-.hex-box {
-  display: grid;
-  place-content: center;
-  margin: .25rem;
-}
-.hex-box .hex-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2.8rem 0;
-}
 .hex-content img {
   z-index: 2;
   position: absolute;
-  height: 80px;
+  height: 100%;
+  filter: grayscale(1);
 }
-.hex-box:nth-child(6n+4), .hex-box:nth-child(6n+5), .hex-box:nth-child(6n+6) {
-  margin-top: -2.5rem;
+.hex-content img:hover {
+  filter: grayscale(0);
 }
-/* .hex-box:nth-child(4), .hex-box:nth-child(5) {
-  margin-top: -2.5rem;
+.full-width img {
+  width: 70%;
+  height: auto !important;
+}
+.full-height img {
+  height: 70px;
+}
+.hex-content span {
+  z-index: 2;
+  font-size: 2rem;
+}
+@media (min-width: 1000px) {
+  .hex-box:nth-child(5), .hex-box:nth-child(12) {
+    grid-column: 2 / span 2;
+  }
+  .hex-box:nth-child(1), .hex-box:nth-child(8), .hex-box:nth-child(8) {
+    grid-column: 1 / span 2
+  }
+}
+@media (min-width: 680px) and (max-width: 1000px) {
+  #skills-section .container > div {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .hex-box:nth-child(4), .hex-box:nth-child(9), .hex-box:nth-child(14) {
+    grid-column: 2 / span 2;
+  }
 }
 @media (max-width: 680px) {
-  .hex-box:nth-child(3) {
-    margin-top: -2.5rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+  #skills-section .container > div {
+    grid-template-columns: repeat(4, 1fr);
   }
-} */
+  .hex-box:nth-child(3), .hex-box:nth-child(6), .hex-box:nth-child(9),
+  .hex-box:nth-child(12), .hex-box:nth-child(15) {
+    grid-column: 2 / span 2;
+  }
+}
+@media (max-width: 380px) {
+  #skills-section .container > div {
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+  }
+}
 /* ------------ END - Skills Section ------------ */
 
 

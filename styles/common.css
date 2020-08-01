@@ -112,7 +112,7 @@ body {
   letter-spacing: .05rem;
   color: var(--secondary-color);
   background: var(--background-color);
-  overflow-x: hidden;
+  overflow: hidden;
   box-sizing: border-box;
   transition: .3s;
 }

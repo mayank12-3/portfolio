@@ -325,7 +325,7 @@ nav .nav-item {
   text-align: right;
 }
 .project .project__right-view ul {
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 
 .project .project-title {
@@ -353,13 +353,7 @@ nav .nav-item {
     text-align: left !important;
     background: var(--project-content-background);
   }
-  .project-tech-stack {
-    margin: 0;
-  }
-  .project-links {
-    margin: 0;
-  }
-  .project .project-title {
+  .project-tech-stack, .project-links, .project .project-title {
     margin: 0;
   }
   .project-img {
@@ -522,11 +516,8 @@ nav .nav-item {
 }
 .hex-box:hover img {
   transform: translateY(-.5rem);
-  transition: transform .5s ease-in-out;
-}
-
-.hex-content img:hover {
   filter: grayscale(0);
+  transition: transform .5s ease-in-out;
 }
 .full-width img {
   width: 70%;

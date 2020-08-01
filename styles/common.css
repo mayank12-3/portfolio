@@ -314,25 +314,6 @@ button::before {
   grid-column: span 2;
   position: relative;
 }
-.hex-box::before {
-  opacity: 0;
-  content: attr(data-set);
-  position: absolute;
-  bottom: -.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  width: 100%;
-  text-align: center;
-}
-.hex-box:hover:before {
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-}
-.hex-box:hover img {
-  transform: translateY(-.5rem);
-  transition: transform .5s ease-in-out;
-}
 .hex-content {
   width: 150px;
   height: 85px;

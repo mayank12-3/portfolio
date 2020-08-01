@@ -98,12 +98,14 @@ nav .nav-item {
   display: flex;
   cursor: pointer;
   color: var(--primary-color);
+  font-size: 2rem;
+  line-height: 0;
 }
 .nav-up-arrow > span {
-  transform: rotate(-90deg);
+  transform: rotate(-180deg);
 }
 .nav-down-arrow > span {
-  transform: rotate(90deg);
+  /* transform: rotate(0deg); */
 }
 .nav-item--active {
   width: 7rem !important;
@@ -495,12 +497,34 @@ nav .nav-item {
   right: 2rem;
   bottom: 0rem;
 }
+.hex-box::before {
+  opacity: 0;
+  content: attr(data-set);
+  position: absolute;
+  bottom: -.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.hex-box:hover:before {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
 .hex-content img {
   z-index: 2;
   position: absolute;
   height: 100%;
   filter: grayscale(1);
+  transition: all .5s ease-in-out;
 }
+.hex-box:hover img {
+  transform: translateY(-.5rem);
+  transition: transform .5s ease-in-out;
+}
+
 .hex-content img:hover {
   filter: grayscale(0);
 }

@@ -24,23 +24,27 @@ header .header-logo .logo-arrow-icons {
   position: absolute;
   right: 0;
   top: 0;
-  width: 175px;
-  height: 35px;
-  text-align: center;
-  border: 2px solid var(--active-color);
-  color: var(--primary-color);
-  border-left: none;
-  border-right: none;
+  width: 285px;
   overflow: hidden;
-  text-transform: uppercase;
-  font-weight: bold;
+  height: 40px;
 }
-.header-list-wrapper > div > div {
-  height: 32.5px;
+.header-items > div {
+  height: 40px;
+  text-transform: uppercase;
   letter-spacing: .45rem;
-  color: var(--primary-color);
-  display: grid;
-  place-content: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  -webkit-text-stroke: 1px var(--secondary-color);
+  text-shadow: none;
+  font-size: var(--h2-fontSize);
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.header-items div:nth-child(1) {
+  visibility: hidden;
 }
 /* ------------ END - Header ------------ */
 

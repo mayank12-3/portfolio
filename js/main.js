@@ -17,7 +17,7 @@ const initialize = () => {
 
   const NAV_LIST_LENGTH = 4
   const ROOT_CONTAINER_HEIGHT = root_container.clientHeight
-  const HEADERS_ITEM_SCROLL_VALUE = 32
+  const HEADERS_ITEM_SCROLL_VALUE = 60
   let scroll_position_value = 0
   let scrolled_Via_Btn
   let active_NavItem_Index = 0
@@ -190,6 +190,9 @@ const initialize = () => {
 const trackingEyes = () => {
   const eyeBalls = document.querySelectorAll('.eyeball')
   document.onmousemove = (event) => {
+    if (window.innerWidth <= 900) {
+      return
+    }
     const posX = event.clientX * 100 / window.innerWidth + '%'
     const posY = event.clientY * 100 / window.innerHeight + '%'
     eyeBalls.forEach(iris => {

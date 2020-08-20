@@ -4,6 +4,14 @@ Personal website showcasing all my work
 ## Folder Structure
 ```
 .
+├── build
+│   └── icons
+│   └── images
+│   └── styles
+│         └── common.min.css
+│         └── main.min.css              
+│   └── index.min.html
+│   └── main.min.js
 ├── icons                      
 ├── images                     
 ├── styles                     

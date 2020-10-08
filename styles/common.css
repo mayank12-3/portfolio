@@ -102,7 +102,7 @@ body {
   margin: 0;
   height: 100vh;
   font-size: var(--body-fontSize);
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira-Sans', sans-serif;
   display: flex;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;

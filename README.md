@@ -28,6 +28,6 @@ Vanilla JS, HTML5 & CSS3
 
 
 ### Live on
-https://deepak-portfolio.netlify.app/
+https://mayank-portfolio.netlify.app/
 
 ### Screenshots

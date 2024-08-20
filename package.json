@@ -6,12 +6,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeepakC27/Portfolio.git"
+    "url": "https://github.com/mayank12-3/portfolio"
   },
-  "author": "Deepak Chaudhari",
+  "author": "Mayank Jain",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DeepakC27/Portfolio/issues"
-  },
-  "homepage": "https://github.com/DeepakC27/Portfolio#readme"
+  "homepage": "https://github.com/mayank12-3/portfolio"
 }

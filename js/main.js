@@ -3,9 +3,9 @@ const initialize = () => {
   loader.className = 'loader__disappear' // hide loader
 
   /* ------- Links ------- */
-    const RESUME_LINK = 'https://drive.google.com/file/d/1AkVAGWqSflKR3Rkixk6j_YM5Bc-btEbt/view?usp=sharing'
-    const GITHUB = 'https://github.com/DeepakC27'
-    const MAIL_LINK = 'mailto:chaudharideepak10@hotmail.com'
+    const RESUME_LINK = ''
+    const GITHUB = ''
+    const MAIL_LINK = 'mailto:mayank.j@gmail.com'
   /* ------- END - Links ------- */
 
   /* ------------- Navigation JS ------------- */
@@ -169,9 +169,9 @@ const initialize = () => {
     displayActiveSection()
   }
 
-  gitHub_viewMore_btn.onclick = () => window.open(GITHUB)
+  // gitHub_viewMore_btn.onclick = () => window.open(GITHUB)
 
-  mailTo_Btn.onclick = () => window.location = MAIL_LINK
+  mailTo_Btn.onclick = () => location.href = MAIL_LINK
 
   viewResume_btn.onclick = () => window.open(RESUME_LINK)
 

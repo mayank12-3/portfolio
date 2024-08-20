@@ -5,7 +5,7 @@ const initialize = () => {
   /* ------- Links ------- */
     const RESUME_LINK = ''
     const GITHUB = ''
-    const MAIL_LINK = 'mailto:mayank.j@gmail.com'
+    const MAIL_LINK = 'mailto:mayank007.j@gmail.com'
   /* ------- END - Links ------- */
 
   /* ------------- Navigation JS ------------- */

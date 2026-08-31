@@ -10,8 +10,6 @@ No build step — Netlify serves the repo root as-is.
 ```
 index.html   the whole site: type system, sections, animations, console
 assets/      product screenshots (Halisi itinerary CMS, booking platform)
-legacy/      the previous version of this site, kept for reference
-Mayank_Jain_Resume_2026_India.pdf
 ```
 
 ## Sections

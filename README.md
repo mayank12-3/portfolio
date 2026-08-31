@@ -1,33 +1,29 @@
-# Portfolio
-Personal website showcasing all my work
+# mayankjain.dev
 
-## Folder Structure
+Personal site for **Mayank Jain** — engineering manager, Bengaluru.
+
+Static, dependency-free: one `index.html` (inline CSS + JS) plus `assets/`.
+No build step — Netlify serves the repo root as-is.
+
+## Structure
+
 ```
-.
-├── build
-│   └── icons
-│   └── images
-│   └── styles
-│         └── common.min.css
-│         └── main.min.css              
-│   └── index.min.html
-│   └── main.min.js
-├── icons                      
-├── images                     
-├── styles                     
-│   └── common.css
-│   └── main.css              
-├── js                     
-│   ├── main.js                          
-├── index.html                     
+index.html   the whole site: type system, sections, animations, console
+assets/      product screenshots (Halisi itinerary CMS, booking platform)
+legacy/      the previous version of this site, kept for reference
+Mayank_Jain_Resume_2026_India.pdf
 ```
 
+## Sections
 
-### Tech Stack
-Vanilla JS, HTML5 & CSS3
+01 Impact · 02 Experience · 03 Case study (Platform V2) · 04 Products (Halisi)
+· 05 About · 06 Console · 07 Contact
 
+The console is an interactive shell — `help`, `whoami`, `work`, `impact`,
+`case`, `halisi`, `cms`, `booking`, `skills`, `contact`, `resume`, `ls`.
 
-### Live on
-https://mayank-portfolio.netlify.app/
+## Local
 
-### Screenshots
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+```

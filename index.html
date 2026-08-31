@@ -1,328 +1,927 @@
-<!DOCTYPE html>
-<html lang='en'>
-
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <meta name='language' content='en_EN'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name='author' content='Mayank Jain'>
-  <meta name='description' content='Portfolio of Mayank Jain, Showcasing tech journey & projects worked on'>
-  <meta name='keywords' content='Mayank Jain, front-end developer,
-      React Js, javascript, Toronto, Resume, Portfolio' />
-  <title lang='en'>Mayank Jain | General Manager</title>
-  <link rel='dns-prefetch stylesheet'
-    href='https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap' />
-  <link rel='shortcut icon' type='image/png' href='./icons/favicon.png' />
-  <link rel='stylesheet' type='text/css' href='./styles/common.css' />
-  <link rel='stylesheet' type='text/css' href='./styles/main.css' />
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0A">
+<link rel="canonical" href="https://mayankjain.dev/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mayankjain.dev/">
+<meta property="og:title" content="Mayank Jain — Engineering Manager">
+<meta property="og:description" content="Nine years building web platforms — eight scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T. Now shipping multi-tenant SaaS end to end.">
+<meta property="og:image" content="https://mayankjain.dev/assets/platform-console.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Mayank Jain — engineering manager. Nine years building web platforms; eight scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9670;</text></svg>">
+<title>Mayank Jain — Engineering Manager</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0B0A; --bg2:#0F0F0E; --panel:#131312; --panel2:#171716;
+  --line:#242322; --line2:#1B1B19; --fg:#F4F2ED; --mut:#A5A29B; --dim:#7B7871; --faint:#565450;
+  --amber:#E3A34F; --amber-s:#F3C88E; --mint:#5CC9A4;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --t2:clamp(30px,4vw,50px); --t3:clamp(23px,2.4vw,31px); --t4:18px;
+  --body:15px; --small:13.5px;
+  --s2:12px; --s3:16px; --s4:24px; --s5:34px; --s6:52px; --s7:clamp(64px,9vh,108px);
+  --measure:62ch;
+  --pad:clamp(20px,5vw,72px); --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;max-width:100%}
+body{margin:0;-webkit-tap-highlight-color:rgba(227,163,79,.18);overscroll-behavior-y:none;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--body);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.006em}
+a{color:var(--amber);text-decoration:none}
+a:hover{color:var(--amber-s)}
+h1,h2,h3,h4{margin:0;font-weight:400}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+::selection{background:var(--amber);color:var(--bg)}
+.wrap{width:100%;min-width:0;max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.body{font-size:var(--body);line-height:1.72;color:var(--mut);max-width:var(--measure)}
+.small{font-size:var(--small);line-height:1.65;color:var(--dim)}
 
-<body class='dark-mode'>
-  <div class='loader-wrapper'>
-    <div class='loader'>
-      <div>MJ</div>
+/* boot */
+#boot{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .5s ease,visibility .5s}
+#boot.gone{opacity:0;visibility:hidden;pointer-events:none}
+#bootbox{width:min(620px,100%);font-family:var(--mono);font-size:clamp(10.5px,3.1vw,13px);overflow:hidden;line-height:2.1;color:var(--mut)}
+#bootbox b{color:var(--fg);font-weight:500}
+#bootbox .p{color:var(--mint)}
+#bootbox .ok{color:var(--amber)}
+#cursor{display:inline-block;width:8px;height:15px;background:var(--amber);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#boot.gone ~ #skip{display:none}
+#skip{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:101;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+
+/* chrome */
+#bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--mint));width:0;z-index:60}
+header{position:fixed;top:0;left:0;right:0;z-index:50;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);background:rgba(11,11,10,.74);border-bottom:1px solid transparent;transition:border-color .3s}
+header.stuck{border-color:var(--line2)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:baseline;gap:11px}
+.brand b{font-family:var(--serif);font-size:23px;font-weight:400;letter-spacing:-.01em}
+.brand span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.links{display:flex;align-items:center;gap:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.links a{color:var(--mut);position:relative;padding:5px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--amber);transition:width .3s cubic-bezier(.2,.8,.2,1)}
+.links a:hover{color:var(--fg)}
+.links a:hover::after{width:100%}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #2C3A33;background:#0F1714;color:var(--mint);padding:8px 12px;border-radius:4px;letter-spacing:.1em}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(92,201,164,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 7px rgba(92,201,164,0)}100%{box-shadow:0 0 0 0 rgba(92,201,164,0)}}
+@media(max-width:900px){.links a{display:none}}
+@media(max-width:600px){.brand span{display:none}.brand b{white-space:nowrap}.nav{height:60px}.pill{padding:7px 10px;font-size:9.5px}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+.word{display:inline-block;opacity:0;transform:translateY(.5em) rotate(1.5deg);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.word.in{opacity:1;transform:none}
+
+/* hero */
+#hero{padding-top:104px;padding-bottom:36px;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:stretch;overflow:hidden}
+#glow{position:absolute;top:-24%;right:-6%;width:min(860px,86vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(227,163,79,.10),rgba(227,163,79,0) 62%);pointer-events:none;will-change:transform}
+#gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:96px 96px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000,transparent);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000,transparent);pointer-events:none}
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) 384px;gap:clamp(32px,5vw,72px);align-items:end;position:relative;z-index:1}
+@media(max-width:1040px){.herogrid{grid-template-columns:1fr}}
+.herol{display:flex;flex-direction:column;gap:var(--s4)}
+h1{font-family:var(--serif);font-size:clamp(38px,6vw,82px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty;max-width:16.5ch}
+h1 em{color:var(--amber);font-style:italic}
+.cta{display:flex;flex-wrap:wrap;gap:10px;padding-top:6px}
+.btn{display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:4px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,border-color .25s}
+.btn.p{background:var(--amber);color:var(--bg)}
+.btn.p:hover{transform:translateY(-2px);background:var(--amber-s)}
+.btn.s{border-color:#2C2A27;color:var(--fg)}
+.btn.s:hover{transform:translateY(-2px);border-color:var(--amber);color:var(--amber)}
+.btn svg{transition:transform .25s}
+.btn:hover svg{transform:translateX(3px)}
+
+/* panel */
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:8px;overflow:hidden}
+.phead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border-bottom:1px solid var(--line);background:var(--panel2);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--dim)}
+.tl{display:flex;gap:5px}
+.tl i{width:8px;height:8px;border-radius:50%;background:#2B2A28;display:block}
+.pbody{padding:18px 15px 20px;display:flex;flex-direction:column;gap:15px}
+.metric{display:flex;flex-direction:column;gap:7px}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--mut)}
+.mrow b{font-weight:500}
+.track{height:4px;background:#232120;border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;border-radius:2px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+/* marquee */
+.marq{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-top:var(--s6);padding:15px 0;overflow:hidden;position:relative;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mtrack{display:flex;gap:46px;width:max-content;animation:slide 38s linear infinite;font-family:var(--serif);font-size:20px;color:#6A6660}
+.marq:hover .mtrack{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* section header — one pattern everywhere */
+.sec{padding:var(--s7) 0}
+.shead{margin-bottom:var(--s6)}
+.sbar{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line2);margin-bottom:var(--s5)}
+.sbar .n{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--amber);letter-spacing:.1em}
+.sbar .t{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.sbar .x{flex:1;height:1px;background:var(--line2)}
+.sbar .m{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.stitle{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,64px);align-items:end}
+@media(max-width:860px){.stitle{grid-template-columns:1fr;gap:18px}}
+h2{font-family:var(--serif);font-size:var(--t2);line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
+h2 em{color:var(--amber);font-style:italic}
+.snote{font-size:var(--small);line-height:1.7;color:var(--dim);max-width:46ch}
+
+/* impact */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.cell{background:var(--bg);padding:26px 24px 22px;display:flex;flex-direction:column;gap:8px;transition:background .35s}
+.cell:hover{background:#121211}
+.num{font-family:var(--serif);font-size:clamp(40px,4.4vw,60px);line-height:1;letter-spacing:-.03em}
+.cell .label{color:var(--fg)}
+.cdesc{font-size:var(--small);line-height:1.6;color:var(--dim)}
+.strip{display:flex;flex-wrap:wrap;gap:12px 38px;font-family:var(--mono);font-size:11.5px;color:var(--dim);border-top:1px solid var(--line2);margin-top:var(--s4);padding-top:20px}
+.strip b{color:var(--fg);font-weight:500}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+
+/* timeline */
+.entry{display:grid;grid-template-columns:150px 34px minmax(0,1fr);align-items:start}
+.edate{display:flex;flex-direction:column;gap:3px;padding-top:3px;font-family:var(--mono)}
+.edate b{font-size:11.5px;font-weight:500;color:var(--fg);letter-spacing:.02em}
+.edate span{font-size:10.5px;color:var(--faint)}
+.rail{display:flex;flex-direction:column;align-items:center;height:100%}
+.node{width:8px;height:8px;border-radius:50%;margin-top:7px;flex:0 0 auto}
+.line{width:1px;flex:1 1 auto;background:var(--line);transform-origin:top;transform:scaleY(0);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.entry.in .line{transform:scaleY(1)}
+.ebody{padding:0 0 var(--s6) 2px}
+.ehead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.ehead h3{font-family:var(--serif);font-size:var(--t3);letter-spacing:-.018em}
+.ehead .co{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.roles{display:flex;flex-direction:column;gap:var(--s5);border-left:1px solid var(--line);padding-left:26px;margin-top:var(--s4)}
+.role .rh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.role .rh b{font-size:var(--t4);font-weight:500;letter-spacing:-.012em}
+.role .rh span{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+.bul{display:flex;flex-direction:column;gap:8px;margin-top:10px;max-width:70ch}
+.bul li{position:relative;padding-left:19px;font-size:14.5px;line-height:1.62;color:var(--mut)}
+.bul li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--faint);transform:rotate(45deg)}
+.bul li b{color:var(--fg);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;color:var(--dim);border:1px solid var(--line);padding:5px 9px;border-radius:3px;transition:border-color .3s,color .3s}
+.chip:hover{border-color:var(--amber);color:var(--amber)}
+.early{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5);max-width:820px}
+@media(max-width:640px){.early{grid-template-columns:1fr}}
+@media(max-width:760px){.entry{grid-template-columns:1fr}.rail{display:none}.edate{flex-direction:row;gap:10px;align-items:baseline;margin-bottom:10px}.roles{padding-left:18px}}
+
+/* case */
+#case{background:var(--bg2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.casegrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,64px);align-items:start}
+@media(max-width:1000px){.casegrid{grid-template-columns:1fr}}
+.step{margin-bottom:var(--s5)}
+.step .label{display:block;margin-bottom:8px}
+.quote{border-left:2px solid var(--amber);padding:2px 0 2px 18px;font-family:var(--serif);font-size:21px;line-height:1.45;max-width:44ch}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-bottom:16px}
+.toggle button,.tabs button{appearance:none;background:transparent;border:0;color:var(--dim);font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;cursor:pointer;transition:background .3s,color .3s}
+.toggle button.on,.tabs button.on{background:var(--amber);color:var(--bg)}
+.diagram{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:20px}
+#gAfter{opacity:0;transition:opacity .6s ease}
+#gBefore{opacity:1;transition:opacity .6s ease}
+.showafter #gAfter{opacity:1}
+.showafter #gBefore{opacity:0}
+.svc{opacity:0;transform:translateX(-14px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)}
+.showafter .svc{opacity:1;transform:none}
+.showafter .svc:nth-of-type(2){transition-delay:.1s}
+.showafter .svc:nth-of-type(3){transition-delay:.2s}
+.showafter .svc:nth-of-type(4){transition-delay:.3s}
+.dash{stroke-dasharray:6 6;animation:dashmove 1.2s linear infinite}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+.mini{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.minicell{border:1px solid var(--line);border-radius:6px;padding:13px 12px}
+.minicell b{display:block;font-family:var(--serif);font-size:27px;line-height:1;font-weight:400;margin-bottom:5px}
+.minicell span{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+@media(max-width:560px){.mini{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* projects */
+#halisi{background:var(--bg2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.proj{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(26px,3.6vw,56px);align-items:start;padding:var(--s6) 0;border-top:1px solid var(--line2)}
+.proj:first-of-type{border-top:0;padding-top:0}
+@media(max-width:960px){.proj{grid-template-columns:1fr}}
+.bframe{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel);box-shadow:0 30px 70px -46px rgba(0,0,0,.95);transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.bframe:hover{transform:translateY(-4px);border-color:#33302C}
+.bbar{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.burl{flex:1;min-width:0;font-family:var(--mono);font-size:9.5px;color:var(--dim);background:#0C0C0B;border:1px solid var(--line);border-radius:4px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shots{position:relative;background:#0A0A09;line-height:0}
+.shots img{width:100%;display:block;transition:opacity .45s ease}
+.shots img+img{position:absolute;inset:0;opacity:0}
+.shots img+img.on{opacity:1}
+.shots img.off{opacity:0}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:12px}
+.ptitle{font-family:var(--serif);font-size:var(--t3);letter-spacing:-.018em;margin:9px 0 12px}
+.spec{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px 16px;font-family:var(--mono);font-size:11px;margin:var(--s4) 0 0;padding-top:16px;border-top:1px solid var(--line2)}
+.spec dt{color:var(--faint);letter-spacing:.1em;text-transform:uppercase;font-size:9.5px;font-weight:500;padding-top:2px}
+.spec dd{margin:0;color:var(--mut);line-height:1.65}
+
+/* about */
+.abgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:start}
+@media(max-width:960px){.abgrid{grid-template-columns:1fr}}
+.prin{display:flex;flex-direction:column;gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.pr{background:var(--bg);padding:18px 20px;display:flex;gap:16px;align-items:flex-start;transition:background .35s}
+.pr:hover{background:#121211}
+.pr i{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--amber);font-style:normal;padding-top:6px}
+.pr b{font-family:var(--serif);font-size:22px;font-weight:400;display:block;margin-bottom:4px;letter-spacing:-.01em}
+.pr span{font-size:13px;line-height:1.6;color:var(--dim)}
+.tgroup{margin-top:var(--s4)}
+.tgroup h4{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.facts{display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px 16px;font-family:var(--mono);font-size:11px;margin-top:var(--s5);padding-top:18px;border-top:1px solid var(--line2)}
+.facts dt{color:var(--faint);letter-spacing:.1em;text-transform:uppercase;font-size:9.5px;font-weight:500}
+.facts dd{margin:0;color:var(--mut)}
+
+/* console */
+#term{background:var(--bg2);border-top:1px solid var(--line2)}
+.console{border:1px solid var(--line);background:#090908;border-radius:8px;overflow:hidden;box-shadow:0 30px 80px -42px rgba(0,0,0,.95)}
+.chead{display:flex;align-items:center;gap:12px;padding:11px 15px;background:var(--panel2);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--dim)}
+#out{height:min(42vh,318px);overflow-y:auto;padding:18px 18px;font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--mut);scrollbar-width:thin;scrollbar-color:#2C2926 transparent}
+#out::-webkit-scrollbar{width:8px}
+#out::-webkit-scrollbar-thumb{background:#2C2926;border-radius:4px}
+#out .cmd{color:var(--fg)}
+#out .pfx{color:var(--mint)}
+#out .k{color:var(--amber)}
+#out .err{color:#D97362}
+#out .muted{color:var(--faint)}
+.inrow{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:12px 18px;background:#0B0B0A}
+.inrow span{font-family:var(--mono);font-size:12.5px;color:var(--mint)}
+#cin{flex:1;background:transparent;border:0;outline:none;color:var(--fg);font-family:var(--mono);font-size:12.5px;caret-color:var(--amber)}
+.hints{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.hints button{appearance:none;background:transparent;border:1px solid var(--line);color:var(--dim);font-family:var(--mono);font-size:10px;padding:6px 10px;border-radius:3px;cursor:pointer;transition:border-color .3s,color .3s}
+.hints button:hover{border-color:var(--amber);color:var(--amber)}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,5vw,72px);align-items:start}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+.crow{display:flex;align-items:center;gap:13px;padding:13px 17px;font-family:var(--mono);font-size:12.5px;color:var(--fg);border-bottom:1px solid var(--line2);transition:background .3s,padding-left .3s}
+.crow:last-of-type{border-bottom:0}
+a.crow:hover{background:#171615;padding-left:23px}
+footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+
+/* ---------- mobile ---------- */
+@media(max-width:820px){
+  #glow{right:0;top:-14%;width:min(560px,94%)}
+  :root{--s6:40px;--s7:64px;--body:15px}
+  .sec{padding:var(--s7) 0}
+  .shead{margin-bottom:var(--s5)}
+  .sbar{gap:10px}
+  .sbar .m{display:none}
+  h1{font-size:clamp(34px,8.6vw,52px);max-width:none}
+  h2{font-size:clamp(27px,7vw,40px)}
+  .btn{height:52px;width:100%;justify-content:center}
+  .cta{flex-direction:column;align-items:stretch;gap:9px}
+  .marq{margin-top:36px}
+  .mtrack{font-size:17px;gap:34px}
+  .cell{padding:22px 18px}
+  .num{font-size:44px}
+  .strip{gap:8px 22px;font-size:11px}
+  .roles{padding-left:16px}
+  .bul li{font-size:14.5px}
+  .spec,.facts{grid-template-columns:1fr;gap:4px 0}
+  .spec dt,.facts dt{padding-top:10px}
+  .spec dd,.facts dd{padding-bottom:6px}
+  .quote{font-size:19px}
+  .hints button{padding:9px 12px;font-size:10.5px}
+  .tabs button,.toggle button{padding:12px 15px}
+  #out{height:46vh;font-size:12px}
+  .crow{font-size:12px;padding:14px 15px;word-break:break-word}
+  footer{gap:8px;font-size:9.5px}
+}
+@media(max-width:520px){
+  .grid3{grid-template-columns:1fr}
+  .mini{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .early{grid-template-columns:1fr;gap:26px}
+  .diagram{padding:12px}
+  .pr{padding:16px 16px;gap:12px}
+  .stitle{gap:14px}
+  .snote{max-width:none}
+}
+/* iOS zooms any input under 16px on focus */
+@media(max-width:900px){ #cin,.inrow span{font-size:16px} }
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}html{scroll-behavior:auto}}
+</style></head>
+<body>
+
+
+<div id="boot"><div id="bootbox"></div></div>
+<div id="skip">press any key to skip</div>
+<div id="bar"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><b>Mayank Jain</b><span>Engineering Manager</span></div>
+    <nav class="links">
+      <a href="#impact">Impact</a><a href="#work">Experience</a><a href="#case">Case study</a>
+      <a href="#halisi">Products</a><a href="#about">About</a><a href="#term">Console</a>
+      <span class="pill"><i class="dot"></i>Available now</span>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div id="glow"></div><div id="gridbg"></div>
+  <div class="wrap">
+    <div class="herogrid">
+      <div class="herol">
+        <span class="label rv">Bengaluru, India &nbsp;·&nbsp; 9+ years &nbsp;·&nbsp; India &amp; North America</span>
+        <h1 id="head">I take the systems everyone is afraid to touch and make them <em>boring to deploy.</em></h1>
+        <p class="body rv" style="--d:120ms;max-width:52ch">Eight years scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T &mdash; then two products for safari operators, built end to end, alone. I lead teams of up to ten and still review the diff.</p>
+        <div class="cta rv" style="--d:220ms">
+          <a class="btn p" href="#case">The Platform V2 rebuild
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 4l4 4-4 4"/></svg></a>
+          <a class="btn s" href="#term">Open the console
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5l3 3-3 3"/><path d="M9 11h4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="panel rv" style="--d:320ms">
+        <div class="phead"><span class="tl"><i></i><i></i><i></i></span><span>platform_v2 — after</span><span style="color:var(--mint)">shipped</span></div>
+        <div class="pbody" id="hpanel">
+          <div class="metric"><div class="mrow"><span>production incidents</span><b style="color:var(--mint)">−70%</b></div><div class="track"><div class="fill" data-w="30" style="background:var(--mint)"></div></div></div>
+          <div class="metric"><div class="mrow"><span>throughput</span><b style="color:var(--amber)">+50%</b></div><div class="track"><div class="fill" data-w="78" style="background:var(--amber)"></div></div></div>
+          <div class="metric"><div class="mrow"><span>release velocity</span><b style="color:var(--amber)">2×</b></div><div class="track"><div class="fill" data-w="92" style="background:var(--amber)"></div></div></div>
+          <div class="metric"><div class="mrow"><span>time-to-interactive</span><b style="color:var(--mint)">−40%</b></div><div class="track"><div class="fill" data-w="45" style="background:var(--mint)"></div></div></div>
+          <p class="small" style="color:var(--faint);font-size:12px;margin-top:2px">Monolith → independently deployable Node.js services, migrated one capability at a time with the old path live.</p>
+        </div>
+      </div>
+    </div>
+    <div class="marq"><div class="mtrack" id="mtrack"></div></div>
+  </div>
+</section>
+
+<section class="sec" id="impact">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">01</span><span class="t">Impact</span><span class="x"></span><span class="m">Servify · 2018–2026</span></div>
+      <div class="stitle">
+        <h2 class="rv">The numbers I'd want you to <em>ask about.</em></h2>
+        <p class="snote rv" style="--d:120ms">Every figure came out of one rebuild, or the delivery discipline built around it. Ask me what broke on the way — that part is more interesting.</p>
+      </div>
+    </div>
+    <div class="grid3">
+      <div class="cell rv"><span class="num" data-to="-70" data-suf="%" style="color:var(--mint)">−70%</span><span class="label">Production incidents</span><span class="cdesc">Monolith decomposed into independently deployable Node.js services.</span></div>
+      <div class="cell rv" style="--d:70ms"><span class="num" data-to="50" data-pre="+" data-suf="%" style="color:var(--amber)">+50%</span><span class="label">Throughput</span><span class="cdesc">Standardised API contracts across warranty, claims and buyback.</span></div>
+      <div class="cell rv" style="--d:140ms"><span class="num" data-to="2" data-suf="×" style="color:var(--amber)">2×</span><span class="label">Release velocity</span><span class="cdesc">Four squads shipping on their own cadence instead of one train.</span></div>
+      <div class="cell rv" style="--d:210ms"><span class="num" data-to="-40" data-suf="%" style="color:var(--mint)">−40%</span><span class="label">Time-to-interactive</span><span class="cdesc">Lazy loading, code splitting and CDN asset delivery on the React frontend.</span></div>
+      <div class="cell rv" style="--d:280ms"><span class="num" data-to="-30" data-suf="%" style="color:var(--mint)">−30%</span><span class="label">JS bundle size</span><span class="cdesc">Tree shaking plus one shared component library instead of five forks.</span></div>
+      <div class="cell rv" style="--d:350ms"><span class="num" data-to="-60" data-suf="%" style="color:var(--mint)">−60%</span><span class="label">Deployment time</span><span class="cdesc">Jenkins pipelines that made a production deploy a non-event.</span></div>
+    </div>
+    <div class="strip rv"><span><b>10</b> engineers led</span><span><b>4</b> squads</span><span><b>4</b> regions — India, MEA, EU, US</span><span><b>8</b> years at Servify</span><span><b>2</b> products shipped solo</span></div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">02</span><span class="t">Experience</span><span class="x"></span><span class="m">2016 → 2026</span></div>
+      <div class="stitle">
+        <h2 class="rv">Ten years, <em>one direction.</em></h2>
+        <p class="snote rv" style="--d:120ms">Video player → consumer app → enterprise platform → my own products. Each step a larger blast radius than the last.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="edate"><b>Feb — Aug 2026</b><span>Bengaluru</span></div>
+      <div class="rail"><span class="node" style="background:var(--amber)"></span><span class="line"></span></div>
+      <div class="ebody">
+        <div class="ehead"><h3>Co-Founder &amp; Engineering Lead</h3><span class="co">Halisi Safari Solutions</span></div>
+        <p class="body">Two products for safari operators, designed and shipped end to end as sole engineer — a headless itinerary CMS and a multi-tenant booking and operations platform. Both live, with paying operators running daily business on them.</p>
+        <ul class="bul">
+          <li>Owned the whole stack in production: <b>multi-tenant isolation</b>, role-based access across operators, camps and agents, releases, monitoring and support.</li>
+          <li>Integrated <b>LLM-backed itinerary drafting and guest replies</b> into the operator workflow, cutting the manual effort of answering enquiries.</li>
+        </ul>
+        <div class="chips"><span class="chip">Next.js 15</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Multi-tenant</span><span class="chip">RAG / LLM</span></div>
+        <p class="small" style="margin-top:16px">Both products in detail &nbsp;<a href="#halisi">↓ section 04</a></p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="edate"><b>Sep 2018 — Jan 2026</b><span>Mumbai · Toronto · Bengaluru</span></div>
+      <div class="rail"><span class="node" style="background:var(--fg)"></span><span class="line"></span></div>
+      <div class="ebody">
+        <div class="ehead"><h3>Servify</h3><span class="co">8 years · 3 cities · 3 roles</span></div>
+        <p class="body">The device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T — protection plans, claims, repair, exchange and buyback, running across four regions.</p>
+
+        <div class="roles">
+          <div class="role">
+            <div class="rh"><b>Engineering Manager</b><span>Jun 2024 — Jan 2026 · Bengaluru</span></div>
+            <ul class="bul">
+              <li>Led <b>10 engineers across 4 squads</b> — hiring, performance and career development — while staying in code and design review.</li>
+              <li>Led <b>Platform V2</b>: monolith decomposed into independently deployable Node.js microservices with standardised API contracts.</li>
+              <li>Built an SSR and brand-theming framework for full partner whitelabelling from one shared component library.</li>
+              <li>Designed the Jenkins CI/CD pipelines across services and React apps — deployment time down ~60%.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="rh"><b>Software Engineering Manager</b><span>Jun 2021 — May 2024 · Toronto</span></div>
+            <ul class="bul">
+              <li>Led a cross-functional frontend and backend team from technical design through QA, rollout and post-launch stabilisation.</li>
+              <li>Shipped the product surfaces for <b>ML-backed capabilities</b> — fraud detection, GSM warranty validation, automated device diagnostics.</li>
+              <li>Ran services on AWS and GCP under multi-region traffic — India, MEA, EU, US.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="rh"><b>Lead Product Engineer</b><span>Sep 2018 — Jun 2021 · Mumbai</span></div>
+            <ul class="bul">
+              <li>Built the React-Redux consumer app for device after-sales, deployed for Apple, OnePlus, Nokia, Motorola and Samsung.</li>
+              <li>Delivered internationalisation including Chinese and Arabic with full RTL support.</li>
+              <li>Integrated <b>payments</b> across Razorpay, Stripe, PayPal and Telr.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="edate"><b>2016 — 2018</b><span>Bengaluru</span></div>
+      <div class="rail"><span class="node" style="background:#3A3733"></span></div>
+      <div class="ebody" style="padding-bottom:0">
+        <div class="early">
+          <div>
+            <div class="rh" style="margin-bottom:8px"><b style="font-size:var(--t4);font-weight:500">Software Engineer</b>&nbsp;<span class="co">iService</span></div>
+            <p class="small">Booking product, e-commerce site and internal CRM for doorstep device repair.</p>
+          </div>
+          <div>
+            <div class="rh" style="margin-bottom:8px"><b style="font-size:var(--t4);font-weight:500">Frontend Developer</b>&nbsp;<span class="co">Vidgyor</span></div>
+            <p class="small">Auto-detection of TV ad breaks on live IP streams, swapping broadcast ads for personalised video.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div id='theme-mode'>☼</div>
-  <header class='body-layout'>
-    <div>
-      <div class='header-logo'>
-        <div class='logo-arrow-icons'></div>
-        <div class='logo-content'>
-          MJ
-        </div>
-        <div class='logo-arrow-icons'></div>
+</section>
+
+<section class="sec" id="case">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">03</span><span class="t">Case study</span><span class="x"></span><span class="m">Servify · 2024–2026</span></div>
+      <div class="stitle">
+        <h2 class="rv">Strangling a monolith <em>in production</em></h2>
+        <p class="snote rv" style="--d:120ms">Four enterprise partners, four regions, zero acceptable downtime, and a roadmap nobody would let us pause.</p>
       </div>
-      <div class='header-list-wrapper'>
-        <div class='header-items'>
-          <div>Home</div>
-          <div>Work</div>
-          <div>Experience</div>
-          <div>About</div>
-          <div>Skills</div>
-          <div>Contact</div>
+    </div>
+
+    <div class="casegrid">
+      <div class="rv">
+        <div class="step"><span class="label">01 — The situation</span><p class="body">One codebase served Apple, Samsung, HP and AT&amp;T across India, MEA, EU and the US. Every release was a coordinated event, and a bug in one partner's warranty flow could take down another partner's claims flow. The incident rate reflected exactly that.</p></div>
+        <div class="step"><span class="label">02 — The real risk</span><p class="body">Not the architecture — the team. Ten engineers across four squads, each with their own partner commitments, could just as easily have built four inconsistent services and landed on a distributed monolith. That is worse than what we started with.</p></div>
+        <div class="step"><span class="label">03 — What I did</span><p class="body">Refused the big-bang rewrite. Drew service boundaries around business capability, standardised API contracts <em>before</em> anyone wrote a service, then strangled the monolith one capability at a time — old path live until the new one proved itself. Observability, distributed logging and Jenkins pipelines went in ahead of the migration, so a deploy became boring rather than an event.</p></div>
+        <p class="quote">Four squads came out of it shipping to one standard rather than four. That outcome matters more to me than the incident graph.</p>
+      </div>
+
+      <div class="rv" style="--d:120ms">
+        <div class="toggle"><button id="bBefore" class="on">Before</button><button id="bAfter">After</button></div>
+        <div class="diagram" id="diagram">
+          <svg viewBox="0 0 660 330" width="100%" fill="none">
+            <g id="gBefore">
+              <rect x="140" y="40" width="380" height="250" rx="8" fill="#1A1817" stroke="#332F2B"/>
+              <text x="330" y="76" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#A5A29B">MONOLITH</text>
+              <line x1="170" y1="96" x2="490" y2="96" stroke="#2C2926"/>
+              <text x="196" y="132" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">warranty</text>
+              <text x="196" y="162" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">claims</text>
+              <text x="196" y="192" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">buyback</text>
+              <text x="380" y="132" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">repair</text>
+              <text x="380" y="162" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">payments</text>
+              <text x="380" y="192" font-family="Geist, sans-serif" font-size="13" fill="#7B7871">diagnostics</text>
+              <text x="330" y="240" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9.5" letter-spacing="1" fill="#D97362">ONE RELEASE TRAIN · SHARED BLAST RADIUS</text>
+              <text x="330" y="264" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9.5" letter-spacing="1" fill="#565450">4 partners · 4 regions</text>
+            </g>
+            <g id="gAfter">
+              <rect x="8" y="70" width="150" height="190" rx="6" fill="#1A1817" stroke="#332F2B"/>
+              <text x="83" y="100" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9.5" letter-spacing="1.4" fill="#7B7871">LEGACY</text>
+              <text x="83" y="170" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" fill="#565450">shrinking</text>
+              <path d="M176 165 H 258" stroke="#E3A34F" stroke-width="1.5" class="dash"/>
+              <path d="M252 159 l 8 6 -8 6" stroke="#E3A34F" stroke-width="1.5"/>
+              <text x="216" y="150" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1" fill="#E3A34F">STRANGLER</text>
+              <line x1="290" y1="34" x2="290" y2="300" stroke="#2C2926"/>
+              <text x="290" y="22" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.4" fill="#5CC9A4">API CONTRACTS</text>
+              <g class="svc"><rect x="330" y="34" width="310" height="52" rx="5" fill="#161514" stroke="#5CC9A4" stroke-opacity=".45"/><text x="350" y="59" font-family="Geist, sans-serif" font-size="14" fill="#F4F2ED">warranty-service</text><text x="350" y="76" font-family="Geist Mono, monospace" font-size="9" fill="#565450">node.js · own deploy</text><line x1="290" y1="60" x2="330" y2="60" stroke="#2C2926"/></g>
+              <g class="svc"><rect x="330" y="100" width="310" height="52" rx="5" fill="#161514" stroke="#5CC9A4" stroke-opacity=".45"/><text x="350" y="125" font-family="Geist, sans-serif" font-size="14" fill="#F4F2ED">claims-service</text><text x="350" y="142" font-family="Geist Mono, monospace" font-size="9" fill="#565450">node.js · own deploy</text><line x1="290" y1="126" x2="330" y2="126" stroke="#2C2926"/></g>
+              <g class="svc"><rect x="330" y="166" width="310" height="52" rx="5" fill="#161514" stroke="#5CC9A4" stroke-opacity=".45"/><text x="350" y="191" font-family="Geist, sans-serif" font-size="14" fill="#F4F2ED">buyback-service</text><text x="350" y="208" font-family="Geist Mono, monospace" font-size="9" fill="#565450">node.js · own deploy</text><line x1="290" y1="192" x2="330" y2="192" stroke="#2C2926"/></g>
+              <g class="svc"><rect x="330" y="232" width="310" height="52" rx="5" fill="#161514" stroke="#332F2B"/><text x="350" y="257" font-family="Geist, sans-serif" font-size="14" fill="#A5A29B">payments &amp; the rest</text><text x="350" y="274" font-family="Geist Mono, monospace" font-size="9" fill="#565450">migrated behind the same contract</text><line x1="290" y1="258" x2="330" y2="258" stroke="#2C2926"/></g>
+              <text x="485" y="308" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1" fill="#565450">OBSERVABILITY + CI/CD WENT IN FIRST</text>
+            </g>
+          </svg>
+        </div>
+        <div class="mini">
+          <div class="minicell"><b style="color:var(--mint)">−70%</b><span>Incidents</span></div>
+          <div class="minicell"><b style="color:var(--amber)">+50%</b><span>Throughput</span></div>
+          <div class="minicell"><b style="color:var(--amber)">2×</b><span>Release velocity</span></div>
+          <div class="minicell"><b style="color:var(--mint)">−60%</b><span>Deploy time</span></div>
         </div>
       </div>
     </div>
-  </header>
-  <main class='body-layout'>
-    <aside>
-      <nav>
-        <div class='nav-up-arrow'><span>➠</span></div>
-        <div aria-label='home-page-section' class='nav-item nav-item--active'><span>Home</span></div>
-        <div aria-label='timeline-section' class='nav-item'><span>Experience</span></div>
-        <div aria-label='about-me-section' class='nav-item'><span>About</span></div>
-        <div aria-label='skills-section' class='nav-item'><span>Skills</span></div>
-        <div aria-label='contact-me-section' class='nav-item'><span>Contact</span></div>
-        <div class='nav-down-arrow'><span>➠</span></div>
-      </nav>
-    </aside>
-    <article id='root'>
-      <section id='home-page-section'>
-        <div class='container'>
-          <div class='intro-headings-wrapper'>
-            <h2>Hi there, I'm</h2>
-            <h1 class='fg-primary-clr'>Mayank Jain</h1>
-            <h2 class='text-right'>Developer & Explorer</h2>
-          </div>
-          <div class='landing-page_img fade-in'>
-            <img alt='bob' src='./images/bob.png' />
-            <div class='left-eye-bounds'>
-              <div class='eyeball'></div>
-            </div>
-            <div class='right-eye-bounds'>
-              <div class='eyeball'></div>
-            </div>
-          </div>
-          <p class='intro-section_content fade-in'>
-            I'm a General Manager - Engineering based in Toronto, BCA specializing in building (and occasionally
-            designing) exceptional websites, applications, and everything in between.
-            In my spare time, you can probably find me <span class='fg-primary-clr'><del>cooking</del></span> eating
-            food, exploring somewhere or working on my personal projects.
-          </p>
-          <div id='theming-color'>
-          </div>
-          <div class='buttons-container fade-in'>
-            <button class='merge-2_col' id='view-work-btn'>
-              <span>View my work</span>
-            </button>
-          </div>
-        </div>
-      </section>
-      <section id='timeline-section'>
-        <h1 class='section-heading sticky-header'>
-          &lt;Experience Timeline /&gt;
-          <hr />
-        </h1>
-        <div class='container'>
-          <div id='timeline-container'>
-            <div class='timeline-card'>
-              <h2 class='timeline-heading'>
-                General Manager at <span class='fg-primary-clr'><b>SERVIFY</b></span>
-              </h2>
-              <div class='content-descp'>
-                <img class='company-logo' alt='servify' src='./icons/Servify_logo.png' />
-                <div class='fade-in'>
-                  <p>June 2024 - PRESENT</p>
-                  <ul>
-                    <li>Lead and mentor a team of engineers, helping them grow their skills and advance in their careers
-                    </li>
-                    <li>Provide technical guidance to the team, making architectural decisions, and ensuring best practices are followed</li>
-                    <li>Collaborate with other technical leaders to align on broader technical strategy</li>
-                    <li>Participate in the continuous improvement of engineering practices, tools, and methodologies</li>
-                    <li>Liaise between engineering teams and other departments (like product, operations, and customer service) to ensure alignment on goals and priorities</li>
-                  </ul>
-                  <div class='location-wrapper'>
-                    <img alt='location' src='./icons/location_icon.png' />
-                    <span>Bengaluru, India</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='timeline-card'>
-              <h2 class='timeline-heading'>
-                Engineering Manager at <span class='fg-primary-clr'><b>SERVIFY</b></span>
-              </h2>
-              <div class='content-descp'>
-                <img class='company-logo' alt='servify' src='./icons/Servify_logo.png' />
-                <div class='fade-in'>
-                  <p>Sept 2018 - June 2024</p>
-                  <ul>
-                    <li>Created React-Redux based consumer application for the device after-sales processing featuring
-                      purchasing insurance plans, repair, exchange etc.
-                      <br />For the OEM's like Apple, OnePlus, Nokia, Motorola, Samsung & many others
-                    </li>
-                    <li>i18N Consumer App featuring languages like Chinese, Arabic etc with RTL support</li>
-                    <li>Worked on payment gateway integrations like Razorpay, Stripe, Paypal & Telr</li>
-                    <li>Token system with announcement support using speech synthesis with language support</li>
-                  </ul>
-                  <div class='location-wrapper'>
-                    <img alt='location' src='./icons/location_icon.png' />
-                    <span>Toronto, Cananda</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='timeline-card'>
-              <h2 class='timeline-heading'>
-                Software Developer at <span class='fg-primary-clr'><b>iService</b></span>
-              </h2>
-              <div class='content-descp'>
-                <img class='company-logo' alt='iService' src='./icons/iService.png' />
-                <div class='fade-in'>
-                  <p>Aug 2017 - Aug 2018</p>
-                  <ul>
-                    <li>Design Develop and Maintain the iService Digital Booking Product, with the aim of increase the
-                      no of conversions through digital channels of visitor to customers</li>
-                    <li>Design Develop and maintain the internal CRM</li>
-                    <li>Search Engine Optimization (SEO) and Google Indexing of the iService website</li>
-                    <li>Handle Google Analytics and come up with strategies to increase the business metrics</li>
-                    <li>Integrated with communications partners for SMS, Call and Email services and with lead
-                      management and landing page tools/li>
-                  </ul>
-                  <div class='location-wrapper'>
-                    <img alt='location' src='./icons/location_icon.png' />
-                    <span>Bengaluru, India</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='timeline-card'>
-              <h2 class='timeline-heading'>
-                FrontEnd Developer at <span class='fg-primary-clr'><b>Vidgyor</b></span>
-              </h2>
-              <div class='content-descp'>
-                <img class='company-logo' alt='vidgyor' src='./icons/vidgyor.png' />
-                <div class='fade-in'>
-                  <p>Oct 2016 - July 2017</p>
-                  <ul>
-                    <li>Solution for News Channels to auto-detect original
-                      broadcast TV ads and replace them with a different set of personalized video ads from third party
-                      Adnetworks. Designed and Developed Widgets (owl-carousel and isotope) and End Cards, once the
-                      video is completed related videos appears, Just like YouTube</li>
-                    <li>Made a Dashboard to upload videos to server just like YouTube uploader. You can upload videos,
-                      add them to categories, fetch new thumbnails from the video, upload thumbnails for the video, add
-                      tags and description with more bulk actions. Go Live stream was added feature to this</li>
-                  </ul>
-                  <div class='location-wrapper'>
-                    <img alt='location' src='./icons/location_icon.png' />
-                    <span>Bengaluru, India</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </section>
-      <section id='about-me-section'>
-        <h1 class='section-heading sticky-header'>
-          &lt;About Me /&gt;
-          <hr />
-        </h1>
-        <div class='container'>
-          <div class='about-me-info'>
-            <p class='rm_tm'>
-              I am an outgoing and adventurous individual with passion for luxury automobiles and technologies. I enjoy
-              seasonal trekking and hiking on unfavourable terrains and challenging weathers.
-            </p>
-            <p>
-              Shortly after graduating from <a rel='nofollow noopener noreferrer'
-                href='https://www.jainuniversity.ac.in/' target='_blank'>
-                <span>Jain University</span>
-              </a>, I joined as a Frontend Developer at a Ad-Tech Solutions organisation&nbsp;
-              <a rel='nofollow noopener noreferrer' href='https://vidgyor.com/' target='_blank'>
-                <span>Vidgyor</span>
-              </a>where I worked for an year on the wide variety of interesting and meaningful projects on a daily basis
-              to enable digital ads for the news channels.
-            </p>
-            <p class='rm_bm'>
-              Later the following year I transitioned to a new role as a software engineer at <a
-                rel='nofollow noopener noreferrer' href='https://iservice.co.in/'
-                target='_blank'><span>iService,</span></a>
-              where I was responsible for designing, developing, and maintaining the iService Digital Booking Product.
-              My primary goal was to increase conversion rates by turning visitors into customers through enhanced
-              digital channels.
-            </p>
-            <p class='rm_bm'>
-              Sharing a common vision, we were acquired by <a rel='nofollow noopener noreferrer'
-                href='https://servify.com/' target='_blank'><span>Servify</span></a>
-              where I've been working for nearly half a decade. During this time, I've led the team in growing the
-              organization from zero revenue to approximately $150 million.
-            </p>
-          </div>
-          <div class='user-profile-pic slide-in from-bottom'>
-            <img src='./images/user-img.png' alt='user-pic' />
-          </div>
-        </div>
-      </section>
-      <section id='skills-section'>
-        <h1 class='section-heading sticky-header'>
-          &lt;Skills /&gt;
-          <hr />
-        </h1>
-        <div class='container'>
-          <div class='fade-in'>
-            <div class='hex-box' data-set='HTML5'>
-              <div class='hex-content'>
-                <img alt='html5-icon' src='./icons/html5-color.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='CSS3'>
-              <div class='hex-content'>
-                <img alt='css3-icon' src='./icons/css3-color.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='Javascript'>
-              <div class='hex-content'>
-                <img alt='javascript-icon' src='./icons/js_dark-color.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='ReactJS'>
-              <div class='hex-content'>
-                <img alt='react-icon' src='./icons/reactjs-color.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='Bootstrap'>
-              <div class='hex-content'>
-                <img alt='javascript-icon' src='./icons/bootstrap-color.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='Git'>
-              <div class='hex-content'>
-                <img alt='git-icon' src='./icons/git-icon.svg' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='JQuery'>
-              <div class='hex-content full-height'>
-                <img alt='git-icon' src='./icons/jquery_min-icon.png' />
-              </div>
-            </div>
-            <div class='hex-box' data-set='Adobe XD'>
-              <div class='hex-content full-height'>
-                <img alt='adobe_xd-icon' src='./icons/adobe_xd-icon.svg' />
-              </div>
-            </div>
-          </div>
-          <p class='note-txt small-font'>
-            Icon's courtesy: <a target='_blank' href='https://icons8.com'><span>Icons8</span></a>
-          </p>
-        </div>
-      </section>
-      <section id='contact-me-section'>
-        <h1 class='section-heading sticky-header'>
-          &lt;Get in touch /&gt;
-          <hr />
-        </h1>
-        <div class='container'>
-          <p>
-            Always looking for new opportunities & challenges. If you have any, don't hesitate, feel free to drop a
-            mail. I will try my best to respond as soon as possible.
-          </p>
-          <div class='social-media-links'>
-            <div><img alt='faceboo-icon' src='./icons/facebook-icon.svg' /></div>
-            <div><img alt='linkedIn-icon' src='./icons/linkedIn-icon.png' /></div>
-            <div><img alt='spotify-icon' src='./icons/spotify-icon.svg' /></div>
-          </div>
-          <div class='buttons-container'>
-            <button id='mailOpt-btn'>
-              <span>Drop a mail</span>
-            </button>
-            <button id='resumeOpt-btn'>
-              <span>View Resume</span>
-            </button>
-          </div>
-        </div>
-        <div class='footer small-font'>
-          <div>
-            Ok, bye now <span class='smiley-icon'>&#9787;</span>
-          </div>
-          <div class='text-right'>
-            Designed & Built by <span class='fg-primary-clr'>Mayank Jain</span>
-          </div>
-        </div>
-      </section>
-    </article>
-  </main>
-</body>
-<script type='text/javascript' src='js/main.js'></script>
+  </div>
+</section>
 
+<section class="sec" id="halisi">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">04</span><span class="t">Products</span><span class="x"></span><span class="m">Halisi · 2026 · sole engineer</span></div>
+      <div class="stitle">
+        <h2 class="rv">Two products, one engineer,<br><em>live in production.</em></h2>
+        <p class="snote rv" style="--d:120ms">Halisi Safari Solutions is safari-operations infrastructure. I designed, built, shipped and support both products — architecture, data model, frontend, auth, billing logic, deploys and the 2am incidents.</p>
+      </div>
+    </div>
+
+    <div class="proj rv">
+      <div class="pmedia">
+        <div class="bframe">
+          <div class="bbar"><span class="tl"><i></i><i></i><i></i></span><span class="burl" data-url>marvelsofafrica.com / itineraries</span></div>
+          <div class="shots" data-shots>
+            <img src="assets/cms-frontend.jpg" alt="Itinerary CMS frontend" loading="lazy">
+            <img src="assets/cms-admin.jpg" alt="Payload CMS admin" loading="lazy">
+          </div>
+        </div>
+        <div class="tabs" data-tabs><button class="on" data-i="0" data-url="marvelsofafrica.com / itineraries">Frontend</button><button data-i="1" data-url="marvelsofafrica.com / admin — payload">CMS admin</button></div>
+      </div>
+      <div>
+        <span class="label">Product 01 — headless CMS</span>
+        <h3 class="ptitle">Itinerary CMS</h3>
+        <p class="body">A self-hosted headless CMS and marketing frontend for safari itineraries. Editors stack blocks into pages and multi-day trips, and the same content renders as a web page or a print-ready PDF.</p>
+        <ul class="bul" style="margin-top:16px">
+          <li><b>Block-based page builder.</b> Every section is a Payload block wired to the frontend through one render map — new layouts without a deploy.</li>
+          <li><b>Itinerary engine.</b> Day-by-day timeline, camps and lodges, expected sightings, inclusions, gallery, reviews and FAQ.</li>
+          <li><b>Luxury PDF export.</b> A PDF-only render mode with its own cover and page-break rules — one content source, two very different outputs.</li>
+          <li><b>Attributed enquiries.</b> A shared form context records which page and which block opened every lead.</li>
+        </ul>
+        <dl class="spec">
+          <dt>Stack</dt><dd>Next.js 15 App Router · TypeScript · Payload 3 · MongoDB · Tailwind + shadcn/ui</dd>
+          <dt>Content</dt><dd>Lexical rich text · nested docs · SEO, search and redirect plugins · S3 media · live preview</dd>
+          <dt>Testing</dt><dd>Vitest + Testing Library</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="proj rv">
+      <div class="pmedia">
+        <div class="bframe">
+          <div class="bbar"><span class="tl"><i></i><i></i><i></i></span><span class="burl" data-url>halisisafarisolutions.com / platform</span></div>
+          <div class="shots" data-shots>
+            <img src="assets/platform-console.jpg" alt="Halisi platform console" loading="lazy">
+            <img src="assets/operator-crm.jpg" alt="Operator CRM analytics" loading="lazy">
+          </div>
+        </div>
+        <div class="tabs" data-tabs><button class="on" data-i="0" data-url="halisisafarisolutions.com / platform">Platform console</button><button data-i="1" data-url="moa.halisisafarisolutions.com / analytics">Operator CRM</button></div>
+      </div>
+      <div>
+        <span class="label">Product 02 — multi-tenant SaaS</span>
+        <h3 class="ptitle">Safari Booking Management</h3>
+        <p class="body">The operations platform underneath. Each operator signs in on their own subdomain with their own branding, users and roles; the Halisi console runs on the apex domain and onboards new tenants.</p>
+        <ul class="bul" style="margin-top:16px">
+          <li><b>Tenant isolation by subdomain.</b> Middleware resolves host to tenant; every query, role and asset is scoped to it — one deployment serving the console and every operator.</li>
+          <li><b>Money, carefully.</b> Bookings into verification, supplier ledger, credit notes and multi-currency instalments — cash-based P&amp;L bucketed by payment date, not sold price.</li>
+          <li><b>Operations views.</b> Cashflow heatmap of inflow against unpaid supplier balance, a bookings calendar, and analytics that merge multi-country trips into one destination line.</li>
+          <li><b>Auth for shared laptops.</b> Session JWT plus a device cookie, email OTP on every new device, invite and set-password flows, per-tenant role validation.</li>
+        </ul>
+        <dl class="spec">
+          <dt>Stack</dt><dd>Next.js 15 · React 19 · TypeScript · MongoDB / Mongoose · Zod</dd>
+          <dt>Platform</dt><dd>Multi-tenant subdomains on one Vercel project · Vercel Blob · Brevo transactional mail · jsPDF documents</dd>
+          <dt>Scope</dt><dd>Tenants, roles, bookings, quotes, rate book, group departures, guides, agents, supplier credit notes</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p class="rv" style="font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--faint);padding-top:22px;border-top:1px solid var(--line2)">Both repositories are private under the Halisi-safari-solutions organisation — happy to walk through the code in an interview.</p>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">05</span><span class="t">About</span><span class="x"></span><span class="m">Bengaluru, India</span></div>
+      <div class="stitle">
+        <h2 class="rv">Same product, progressively <em>larger blast radius.</em></h2>
+        <p class="snote rv" style="--d:120ms">Ten years, three cities, one consistent bet: that the interesting problems live where software meets the people who have to keep it running.</p>
+      </div>
+    </div>
+
+    <div class="abgrid">
+      <div class="rv">
+        <p class="body" style="margin-bottom:18px">I started in 2016 on live video — detecting ad breaks in IP streams and swapping in personalised spots. Then eight years on one platform as it grew from a consumer app for device repair into infrastructure that Apple, Samsung, HP and AT&amp;T route real warranty and claims volume through. Mumbai, then Toronto, then Bengaluru.</p>
+        <p class="body">Managing never took me out of the code. I have never been able to set architectural direction I wasn't willing to read line by line — and the months I spent building Halisi alone, every layer from multi-tenant isolation to 2am production support, were partly to check that the instinct was still real. It was.</p>
+        <dl class="facts">
+          <dt>Education</dt><dd>BCA, Computer Science — Jain University, 2016</dd>
+          <dt>Based</dt><dd>Bengaluru — previously Toronto and Mumbai</dd>
+          <dt>Open to</dt><dd>Engineering Manager · Senior / Staff Engineer — remote, hybrid or relocation</dd>
+        </dl>
+      </div>
+
+      <div class="rv" style="--d:120ms">
+        <span class="label">How I work</span>
+        <div class="prin" style="margin:14px 0 0">
+          <div class="pr"><i>01</i><div><b>Contracts before code</b><span>Agreeing on the interface is far cheaper than agreeing about it afterwards, across four squads.</span></div></div>
+          <div class="pr"><i>02</i><div><b>A boring deploy is a feature</b><span>Observability, logging and pipelines go in before the migration, not after the first incident.</span></div></div>
+          <div class="pr"><i>03</i><div><b>I still read the diff</b><span>Direction I'm not willing to review line by line isn't direction — it's an opinion.</span></div></div>
+        </div>
+
+        <div style="margin-top:var(--s5)">
+          <span class="label">Toolkit</span>
+          <div class="tgroup"><h4>Frontend</h4><div class="chips" style="margin-top:0"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Redux</span><span class="chip">Micro frontends</span><span class="chip">Design systems</span><span class="chip">SSR</span><span class="chip">WCAG</span><span class="chip">Performance</span></div></div>
+          <div class="tgroup"><h4>Backend &amp; platform</h4><div class="chips" style="margin-top:0"><span class="chip">Node.js</span><span class="chip">Microservices</span><span class="chip">REST API design</span><span class="chip">System design</span><span class="chip">Multi-tenant</span><span class="chip">Multi-region</span><span class="chip">MongoDB</span></div></div>
+          <div class="tgroup"><h4>Delivery &amp; cloud</h4><div class="chips" style="margin-top:0"><span class="chip">Playwright</span><span class="chip">Cypress</span><span class="chip">Jenkins</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Observability</span><span class="chip">AWS</span><span class="chip">GCP</span></div></div>
+          <div class="tgroup"><h4>AI &amp; leadership</h4><div class="chips" style="margin-top:0"><span class="chip">LLM features</span><span class="chip">RAG</span><span class="chip">Hiring</span><span class="chip">Performance reviews</span><span class="chip">Mentoring</span><span class="chip">Roadmapping</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="term">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">06</span><span class="t">Console</span><span class="x"></span><span class="m">type help</span></div>
+      <div class="stitle">
+        <h2 class="rv">Or just <em>ask the shell.</em></h2>
+        <p class="snote rv" style="--d:120ms">Everything on this page, queryable. A few commands aren't on the list.</p>
+      </div>
+    </div>
+    <div class="console rv">
+      <div class="chead"><span class="tl"><i></i><i></i><i></i></span><span>mayank@portfolio — zsh</span></div>
+      <div id="out"></div>
+      <div class="inrow"><span>❯</span><input id="cin" autocomplete="off" spellcheck="false" aria-label="terminal input" placeholder="type a command…"></div>
+    </div>
+    <div class="hints">
+      <button data-c="whoami">whoami</button><button data-c="impact">impact</button><button data-c="work">work</button>
+      <button data-c="case">case</button><button data-c="halisi">halisi</button><button data-c="skills">skills</button>
+      <button data-c="contact">contact</button><button data-c="sudo hire me">sudo hire me</button><button data-c="clear">clear</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">07</span><span class="t">Contact</span><span class="x"></span><span class="m">available immediately</span></div>
+    </div>
+    <div class="cgrid">
+      <div class="rv">
+        <h2 style="font-size:clamp(38px,5.6vw,70px);margin-bottom:20px">Let's talk about<br>the <em>hard part.</em></h2>
+        <p class="body" style="max-width:44ch">If you're rebuilding something in flight, standing up a platform team, or you need someone who will lead it and still write code — I'd like to hear about it.</p>
+      </div>
+      <div class="panel rv" style="--d:120ms">
+        <div class="phead"><span class="dot"></span><span>available immediately</span></div>
+        <a class="crow" href="mailto:mayank007.j@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#565450" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 6l7 5 7-5"/></svg>
+          <span>mayank007.j@gmail.com</span></a>
+        <a class="crow" href="tel:+919972414529">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#565450" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3H3.5A1.5 1.5 0 0 0 2 4.6c0 7 6.4 13.4 13.4 13.4A1.5 1.5 0 0 0 17 16.5V14l-3.5-1.5-2 2a11 11 0 0 1-4-4l2-2z"/></svg>
+          <span>+91 99724 14529</span></a>
+        <a class="crow" href="https://linkedin.com/in/mayank-jain-5a2b65125" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#565450" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="15" height="15" rx="2"/><path d="M6 8.5v5"/><path d="M6 6v.01"/><path d="M9.5 13.5v-5"/><path d="M9.5 10.5c0-1.1.9-2 2-2s2 .9 2 2v3"/></svg>
+          <span>in/mayank-jain-5a2b65125</span></a>
+        <div class="crow">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#565450" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17.5s6-5 6-9.5a6 6 0 1 0-12 0c0 4.5 6 9.5 6 9.5z"/><circle cx="10" cy="8" r="2.2"/></svg>
+          <span>Bengaluru, India</span></div>
+        <a class="crow" href="Mayank_Jain_Resume_2026_India.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#565450" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2.5H6a1.5 1.5 0 0 0-1.5 1.5v12A1.5 1.5 0 0 0 6 17.5h8a1.5 1.5 0 0 0 1.5-1.5V7z"/><path d="M11 2.5V7h4.5"/></svg>
+          <span>Résumé — PDF</span></a>
+        <p class="small" style="padding:15px 17px;border-top:1px solid var(--line2);font-size:12px">Open to Engineering Manager and Senior / Staff Engineer roles. Remote, hybrid or relocation.</p>
+      </div>
+    </div>
+    <footer><span>© 2026 Mayank Jain</span><span>Built by hand · Bengaluru</span><span>mayankjain.dev</span></footer>
+  </div>
+</section>
+
+<script>
+(function(){
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- boot ---------- */
+  var boot=document.getElementById('boot'), box=document.getElementById('bootbox'), skip=document.getElementById('skip');
+  var lines=[
+    {t:'❯ ssh mayank@platform-v2',c:'cmd'},
+    {t:'  authenticating… ok',c:'p'},
+    {t:'❯ whoami',c:'cmd'},
+    {t:'  mayank jain — engineering manager, 9+ yrs',c:'ok'},
+    {t:'❯ cat mission.txt',c:'cmd'},
+    {t:'  "make the scary systems boring to deploy"',c:'ok'},
+    {t:'❯ ./launch --portfolio',c:'cmd'}
+  ];
+  function endBoot(){ boot.classList.add('gone'); skip.style.display='none'; document.removeEventListener('keydown',endBoot); document.removeEventListener('click',endBoot); start(); }
+  document.addEventListener('keydown',endBoot); document.addEventListener('click',endBoot);
+  if(RM){ endBoot(); }
+  else{
+    var li=0, ci=0, html='';
+    (function type(){
+      if(li>=lines.length){ setTimeout(endBoot,420); return; }
+      var L=lines[li];
+      if(ci<=L.t.length){
+        var cls = L.c==='cmd'?'':(L.c==='p'?'p':'ok');
+        box.innerHTML = html + '<div class="'+cls+'">'+ (L.c==='cmd'?'<b>':'') + L.t.slice(0,ci).replace(/ /g,'&nbsp;') + (L.c==='cmd'?'</b>':'') + '<span id="cursor"></span></div>';
+        ci++; setTimeout(type, L.c==='cmd'?17:9);
+      } else {
+        html += '<div class="'+(L.c==='cmd'?'':(L.c==='p'?'p':'ok'))+'">'+(L.c==='cmd'?'<b>':'')+L.t.replace(/ /g,'&nbsp;')+(L.c==='cmd'?'</b>':'')+'</div>';
+        li++; ci=0; setTimeout(type, 110);
+      }
+    })();
+    setTimeout(function(){ if(!boot.classList.contains('gone')) endBoot(); }, 5200);
+  }
+
+  /* ---------- headline split ---------- */
+  var head=document.getElementById('head');
+  (function(){
+    var frag=document.createDocumentFragment();
+    Array.prototype.forEach.call(head.childNodes, function(n){
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(function(w){
+          if(!w.trim()){ frag.appendChild(document.createTextNode(' ')); return; }
+          var s=document.createElement('span'); s.className='word'; s.textContent=w; frag.appendChild(s);
+        });
+      } else {
+        var em=document.createElement('em');
+        n.textContent.split(/(\s+)/).forEach(function(w){
+          if(!w.trim()){ em.appendChild(document.createTextNode(' ')); return; }
+          var s=document.createElement('span'); s.className='word'; s.textContent=w; em.appendChild(s);
+        });
+        frag.appendChild(em);
+      }
+    });
+    head.innerHTML=''; head.appendChild(frag);
+  })();
+
+  function start(){
+    var words=head.querySelectorAll('.word');
+    words.forEach(function(w,i){ setTimeout(function(){ w.classList.add('in'); }, RM?0:i*42); });
+    document.querySelectorAll('#hero .rv').forEach(function(el){ el.classList.add('in'); });
+    setTimeout(function(){ document.querySelectorAll('#hpanel .fill').forEach(function(f){ f.style.width=f.dataset.w+'%'; }); }, RM?0:600);
+  }
+
+  /* ---------- marquee ---------- */
+  var names=['Apple','Samsung','AT&T','HP','OnePlus','Nokia','Motorola','Servify','Halisi'];
+  var mt=document.getElementById('mtrack'), s='';
+  for(var r=0;r<2;r++){ names.forEach(function(n){ s+='<span>'+n+'</span>'; }); }
+  mt.innerHTML=s;
+
+  /* ---------- reveal + counters + timeline ---------- */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      var n=e.target.querySelector?e.target.querySelector('.num'):null;
+      if(n && !n.dataset.done) count(n);
+      io.unobserve(e.target);
+    });
+  },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv:not(#hero .rv)').forEach(function(el){ io.observe(el); });
+
+  function count(el){
+    el.dataset.done='1';
+    var to=parseFloat(el.dataset.to), pre=el.dataset.pre||'', suf=el.dataset.suf||'';
+    var neg=to<0, abs=Math.abs(to), dur=1200;
+    var final=(neg?'\u2212':pre)+abs+suf;
+    if(RM){ el.textContent=final; return; }
+    var t0=null;
+    function frame(now){
+      if(t0===null) t0=now;
+      var p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3), v=abs*e;
+      el.textContent=(neg?'\u2212':pre)+(abs<10? v.toFixed(1) : Math.round(v))+suf;
+      if(p<1) requestAnimationFrame(frame); else el.textContent=final;
+    }
+    requestAnimationFrame(frame);
+    setTimeout(function(){ el.textContent=final; }, dur+250);
+  }
+
+  /* ---------- scroll chrome ---------- */
+  var hdr=document.querySelector('header'), bar=document.getElementById('bar'), glow=document.getElementById('glow');
+  function onScroll(){
+    var y=window.scrollY, h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(y/h*100):0)+'%';
+    hdr.classList.toggle('stuck', y>20);
+    if(!RM && glow) glow.style.transform='translateY('+(y*0.12)+'px)';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  if(!RM){
+    document.getElementById('hero').addEventListener('mousemove',function(e){
+      var x=(e.clientX/window.innerWidth-.5), y=(e.clientY/window.innerHeight-.5);
+      glow.style.marginLeft=(x*-40)+'px'; glow.style.marginTop=(y*-30)+'px';
+    });
+  }
+
+  /* ---------- case diagram ---------- */
+  var dia=document.getElementById('diagram'), bB=document.getElementById('bBefore'), bA=document.getElementById('bAfter');
+  function setState(after){ dia.classList.toggle('showafter',after); bA.classList.toggle('on',after); bB.classList.toggle('on',!after); }
+  bB.onclick=function(){setState(false)}; bA.onclick=function(){setState(true)};
+  var dio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ setTimeout(function(){setState(true)}, RM?0:900); dio.unobserve(e.target); } }); },{threshold:.4});
+  dio.observe(dia);
+
+
+  /* ---------- project shot tabs ---------- */
+  document.querySelectorAll('[data-tabs]').forEach(function(tabs){
+    var media=tabs.closest('.pmedia'), shots=media.querySelector('[data-shots]').querySelectorAll('img'), url=media.querySelector('[data-url]');
+    tabs.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        tabs.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');
+        var i=+b.dataset.i;
+        shots.forEach(function(im,ix){ if(ix===0){ im.classList.toggle('off', i!==0); } else { im.classList.toggle('on', ix===i); } });
+        url.textContent=b.dataset.url;
+      };
+    });
+  });
+
+  /* ---------- console ---------- */
+  var out=document.getElementById('out'), cin=document.getElementById('cin');
+  var hist=[], hp=-1;
+  function write(html,cls){ var d=document.createElement('div'); if(cls) d.className=cls; d.innerHTML=html; out.appendChild(d); out.scrollTop=out.scrollHeight; }
+  function k(s){ return '<span class="k">'+s+'</span>'; }
+
+  var CMDS={
+    help:function(){ return 'available commands:<br>'+
+      k('whoami')+'   who I am, in one line<br>'+
+      k('work')+'     roles, newest first<br>'+
+      k('impact')+'   the numbers<br>'+
+      k('case')+'     the Platform V2 rebuild<br>'+
+      k('halisi')+'   what I built at Halisi (try '+'cms'+' and '+'booking'+' too)<br>'+
+      k('skills')+'   the toolkit<br>'+
+      k('contact')+'  how to reach me<br>'+
+      k('resume')+'   download the pdf<br>'+
+      k('ls')+'       list files<br>'+
+      k('clear')+'    wipe the screen<br>'+
+      '<span class="muted">…and a couple that aren\'t on this list.</span>'; },
+    whoami:function(){ return 'Mayank Jain — engineering manager, Bengaluru.<br>9+ years building web platforms, 5 leading teams of up to 10 across India and North America. Still writes code.'; },
+    work:function(){ return [
+      k('2026')+'  Co-Founder &amp; Engineering Lead · Halisi Safari Solutions — multi-tenant B2B SaaS, shipped solo, live paying client.',
+      k('2024')+'  Engineering Manager · Servify — 10 engineers, 4 squads, Platform V2 rebuild.',
+      k('2021')+'  Software Engineering Manager · Servify, Toronto — ML-backed product surfaces, AWS + GCP, 4 regions.',
+      k('2018')+'  Lead Product Engineer · Servify, Mumbai — React-Redux consumer app for Apple, OnePlus, Nokia, Samsung.',
+      k('2017')+'  Software Engineer · iService — booking, commerce and CRM for doorstep repair.',
+      k('2016')+'  Frontend Developer · Vidgyor — live ad-break detection on IP video streams.'
+    ].join('<br>'); },
+    impact:function(){ return [
+      '−70%  production incidents      <span class="muted">monolith → node.js microservices</span>',
+      '+50%  throughput                <span class="muted">standardised api contracts</span>',
+      '  2×  release velocity          <span class="muted">independent deploys per squad</span>',
+      '−40%  time-to-interactive       <span class="muted">code splitting, lazy loading, cdn</span>',
+      '−30%  js bundle size            <span class="muted">tree shaking + shared component lib</span>',
+      '−60%  deployment time           <span class="muted">jenkins ci/cd across services</span>'
+    ].join('<br>'); },
+    "case":function(){ return 'PLATFORM V2 — Servify, 2024–2026<br><br>'+
+      'A monolith served Apple, Samsung, HP and AT&amp;T across 4 regions. One release train, shared blast radius.<br>'+
+      'The risk was never the architecture — it was 4 squads building 4 inconsistent services and landing on a distributed monolith.<br><br>'+
+      'So: contracts standardised '+k('before')+' any service was written, boundaries drawn around business capability, then the monolith strangled one capability at a time with the old path live. Observability and CI/CD went in first.<br><br>'+
+      'Result: '+k('−70% incidents')+', '+k('+50% throughput')+', '+k('2× release velocity')+' — and four squads shipping to one standard.'; },
+    skills:function(){ return [
+      k('frontend ')+' typescript · react · next.js · redux · micro frontends · design systems · ssr · wcag',
+      k('platform ')+' node.js · microservices · rest api design · multi-tenant · multi-region · system design',
+      k('delivery ')+' playwright · cypress · jenkins · docker · ci/cd · observability · release management',
+      k('cloud    ')+' aws · gcp · autoscaling · managed databases · monitoring',
+      k('ai       ')+' llm feature integration · rag · prompt engineering · ai-assisted dev workflows',
+      k('leading  ')+' hiring · performance reviews · mentoring · roadmapping · stakeholder management'
+    ].join('<br>'); },
+    contact:function(){ return 'email     <a href="mailto:mayank007.j@gmail.com">mayank007.j@gmail.com</a><br>'+
+      'phone     +91 99724 14529<br>'+
+      'linkedin  <a href="https://linkedin.com/in/mayank-jain-5a2b65125" target="_blank" rel="noopener">in/mayank-jain-5a2b65125</a><br>'+
+      'location  Bengaluru, India — open to remote, hybrid or relocation<br>'+
+      'status    <span style="color:var(--mint)">available immediately</span>'; },
+    resume:function(){ window.open('Mayank_Jain_Resume_2026_India.pdf','_blank'); return 'opening <a href="Mayank_Jain_Resume_2026_India.pdf" target="_blank">Mayank_Jain_Resume_2026_India.pdf</a> …'; },
+    ls:function(){ return k('resume.pdf')+'  '+k('platform-v2.md')+'  '+k('halisi.md')+'  '+k('principles.txt')+'  <span class="muted">.secrets</span>'; },
+    'cat principles.txt':function(){ return '1. contracts before code<br>2. a boring deploy is a feature<br>3. i still read the diff'; },
+    'cat .secrets':function(){ return '<span class="muted">nice try.</span>'; },
+    'sudo hire me':function(){ return '<span class="p">[sudo] password for recruiter:</span> ••••••••<br>access granted. i\'m available immediately — <a href="mailto:mayank007.j@gmail.com">mayank007.j@gmail.com</a>'; },
+    sudo:function(){ return 'usage: sudo hire me'; },
+    coffee:function(){ return '☕ brewing… (this is the only emoji on the site, and it earned its place)'; },
+    clear:function(){ out.innerHTML=''; return null; }
+  };
+
+  CMDS.halisi=function(){ return 'HALISI SAFARI SOLUTIONS — co-founder &amp; engineering lead, 2026<br><br>Safari-operations infrastructure. Two products, shipped solo, live with paying operators:<br>'+k('cms')+'      itinerary CMS — headless Payload 3 + Next.js 15, block builder, luxury PDF export<br>'+k('booking')+'  safari booking management — multi-tenant CRM, supplier ledger, cash P&amp;L<br><br>Repos are private under the Halisi-safari-solutions org.'; };
+  CMDS.cms=function(){ return 'ITINERARY CMS<br>stack     next.js 15 app router · payload 3 · mongodb · tailwind + shadcn/ui<br>builds    block-based pages, day-by-day itineraries, camps, sightings, faq<br>export    pdf-only render mode with brand cover + page-break control<br>leads     multi-step enquiry form carrying page + block source metadata<br>tests     vitest + testing library'; };
+  CMDS.booking=function(){ return 'SAFARI BOOKING MANAGEMENT<br>stack     next.js 15 · react 19 · mongodb/mongoose · zod<br>tenancy   one deployment, per-operator subdomains, apex platform console<br>auth      session jwt + device cookie, email otp on new devices<br>money     bookings → verification → supplier ledger → credit notes<br>reports   cash-based monthly p&amp;l, ops cashflow heatmap, destination analytics'; };
+  CMDS['cat resume.pdf']=CMDS.resume; CMDS['about']=CMDS.whoami; CMDS['hire']=CMDS['sudo hire me'];
+
+  function run(raw){
+    var c=raw.trim().toLowerCase();
+    write('<span class="pfx">❯</span> <span class="cmd">'+raw.replace(/</g,'&lt;')+'</span>');
+    if(!c) return;
+    hist.unshift(raw); hp=-1;
+    var fn=CMDS[c];
+    if(!fn){ write('command not found: '+c.split(' ')[0]+'. try '+k('help')+'.','err'); return; }
+    var r=fn(); if(r) write(r);
+  }
+
+  write('<span class="muted">mayank@portfolio — last login: today</span>');
+  write('<span class="pfx">❯</span> <span class="cmd">whoami</span>');
+  write(CMDS.whoami());
+  write('&nbsp;');
+  write('type '+k('help')+' for everything this shell knows, or click a chip below.');
+  write('&nbsp;');
+
+  cin.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ run(cin.value); cin.value=''; }
+    else if(e.key==='ArrowUp'){ if(hist.length){ hp=Math.min(hp+1,hist.length-1); cin.value=hist[hp]; e.preventDefault(); } }
+    else if(e.key==='ArrowDown'){ if(hp>0){ hp--; cin.value=hist[hp]; } else { hp=-1; cin.value=''; } e.preventDefault(); }
+  });
+  document.querySelector('.console').addEventListener('click',function(){ cin.focus(); });
+  document.querySelectorAll('.hints button').forEach(function(b){ b.onclick=function(){ run(b.dataset.c); cin.focus(); }; });
+})();
+</script>
+
+</body>
 </html>

@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0B0B0A">
 <link rel="canonical" href="https://mayankjain.dev/">
+<meta name="description" content="Mayank Jain — engineering manager. Nine years building web platforms; eight scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mayankjain.dev/">
 <meta property="og:title" content="Mayank Jain — Engineering Manager">
 <meta property="og:description" content="Nine years building web platforms — eight scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T. Now shipping multi-tenant SaaS end to end.">
 <meta property="og:image" content="https://mayankjain.dev/assets/platform-console.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Mayank Jain — engineering manager. Nine years building web platforms; eight scaling the device-lifecycle platform behind Apple, Samsung, HP and AT&amp;T.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9670;</text></svg>">
 <title>Mayank Jain — Engineering Manager</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -231,7 +231,10 @@ h2 em{color:var(--amber);font-style:italic}
 .pr i{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--amber);font-style:normal;padding-top:6px}
 .pr b{font-family:var(--serif);font-size:22px;font-weight:400;display:block;margin-bottom:4px;letter-spacing:-.01em}
 .pr span{font-size:13px;line-height:1.6;color:var(--dim)}
-.tgroup{margin-top:var(--s4)}
+.tgroup{margin-top:0}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5) clamp(20px,3vw,44px);margin-top:var(--s4)}
+@media(max-width:900px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.tools{grid-template-columns:1fr;gap:var(--s4)}}
 .tgroup h4{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
 .facts{display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px 16px;font-family:var(--mono);font-size:11px;margin-top:var(--s5);padding-top:18px;border-top:1px solid var(--line2)}
 .facts dt{color:var(--faint);letter-spacing:.1em;text-transform:uppercase;font-size:9.5px;font-weight:500}
@@ -319,8 +322,8 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
   <div class="wrap nav">
     <div class="brand"><b>Mayank Jain</b><span>Engineering Manager</span></div>
     <nav class="links">
-      <a href="#impact">Impact</a><a href="#work">Experience</a><a href="#case">Case study</a>
-      <a href="#halisi">Products</a><a href="#about">About</a><a href="#term">Console</a>
+      <a href="#about">About</a><a href="#impact">Impact</a><a href="#work">Experience</a>
+      <a href="#case">Case study</a><a href="#halisi">Products</a><a href="#term">Console</a>
       <span class="pill"><i class="dot"></i>Available now</span>
     </nav>
   </div>
@@ -357,10 +360,55 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
   </div>
 </section>
 
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="shead">
+      <div class="sbar rv"><span class="n">01</span><span class="t">About</span><span class="x"></span><span class="m">Bengaluru, India</span></div>
+      <div class="stitle">
+        <h2 class="rv">Same product, progressively <em>larger blast radius.</em></h2>
+        <p class="snote rv" style="--d:120ms">Ten years, three cities, one consistent bet: the interesting problems live where software meets the people who have to keep it running.</p>
+      </div>
+    </div>
+
+    <div class="abgrid">
+      <div class="rv">
+        <p class="body" style="margin-bottom:18px">I started in 2016 on live video — detecting ad breaks in IP streams and swapping in personalised spots. Then eight years on one platform as it grew from a consumer app for device repair into infrastructure that Apple, Samsung, HP and AT&amp;T route real warranty and claims volume through. Mumbai, then Toronto, then Bengaluru.</p>
+        <p class="body">Managing never took me out of the code. I have never been able to set architectural direction I wasn't willing to read line by line — and the months I spent building Halisi alone, every layer from multi-tenant isolation to 2am production support, were partly to check that the instinct was still real. It was.</p>
+        <dl class="facts">
+          <dt>Education</dt><dd>BCA, Computer Science — Jain University, 2016</dd>
+          <dt>Based</dt><dd>Bengaluru — previously Toronto and Mumbai</dd>
+          <dt>Open to</dt><dd>Engineering Manager · Senior / Staff Engineer — remote, hybrid or relocation</dd>
+        </dl>
+      </div>
+
+      <div class="rv" style="--d:120ms">
+        <span class="label">How I work</span>
+        <div class="prin" style="margin:14px 0 0">
+          <div class="pr"><i>01</i><div><b>Contracts before code</b><span>Agreeing on the interface is far cheaper than agreeing about it afterwards, across four squads.</span></div></div>
+          <div class="pr"><i>02</i><div><b>A boring deploy is a feature</b><span>Observability, logging and pipelines go in before the migration, not after the first incident.</span></div></div>
+          <div class="pr"><i>03</i><div><b>I still read the diff</b><span>Direction I'm not willing to review line by line isn't direction — it's an opinion.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--line2)">
+      <span class="label">Core skills</span>
+      <div class="tools">
+        <div class="tgroup"><h4>Frontend</h4><div class="chips" style="margin-top:0"><span class="chip">TypeScript</span><span class="chip">JavaScript (ES6+)</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Redux</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Micro frontends</span><span class="chip">Design systems</span><span class="chip">Component libraries</span><span class="chip">Server-side rendering</span><span class="chip">Responsive design</span><span class="chip">Accessibility (WCAG)</span><span class="chip">Performance optimisation</span></div></div>
+        <div class="tgroup"><h4>Backend &amp; platform</h4><div class="chips" style="margin-top:0"><span class="chip">Node.js</span><span class="chip">Microservices</span><span class="chip">REST API design</span><span class="chip">System design</span><span class="chip">Monolith decomposition</span><span class="chip">Multi-tenant architecture</span><span class="chip">Multi-region deployments</span><span class="chip">Scalability &amp; reliability</span></div></div>
+        <div class="tgroup"><h4>Testing &amp; delivery</h4><div class="chips" style="margin-top:0"><span class="chip">React Testing Library</span><span class="chip">Playwright</span><span class="chip">Cypress</span><span class="chip">Unit / integration / E2E</span><span class="chip">Jenkins</span><span class="chip">CI/CD pipeline design</span><span class="chip">Docker</span><span class="chip">Release management</span><span class="chip">Observability</span><span class="chip">Distributed logging</span></div></div>
+        <div class="tgroup"><h4>Cloud</h4><div class="chips" style="margin-top:0"><span class="chip">AWS</span><span class="chip">GCP</span><span class="chip">Autoscaling</span><span class="chip">Managed databases</span><span class="chip">Monitoring</span><span class="chip">Multi-environment rollouts</span></div></div>
+        <div class="tgroup"><h4>AI &amp; GenAI</h4><div class="chips" style="margin-top:0"><span class="chip">LLM feature integration</span><span class="chip">RAG</span><span class="chip">Prompt engineering</span><span class="chip">AI-assisted development</span><span class="chip">Claude</span><span class="chip">Cursor</span><span class="chip">GitHub Copilot</span></div></div>
+        <div class="tgroup"><h4>Leadership</h4><div class="chips" style="margin-top:0"><span class="chip">People management</span><span class="chip">Hiring</span><span class="chip">Performance reviews</span><span class="chip">Mentoring &amp; coaching</span><span class="chip">Agile / Scrum</span><span class="chip">Technical roadmapping</span><span class="chip">Cross-functional management</span><span class="chip">Stakeholder management</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="impact">
   <div class="wrap">
     <div class="shead">
-      <div class="sbar rv"><span class="n">01</span><span class="t">Impact</span><span class="x"></span><span class="m">Servify · 2018–2026</span></div>
+      <div class="sbar rv"><span class="n">02</span><span class="t">Impact</span><span class="x"></span><span class="m">Servify · 2018–2026</span></div>
       <div class="stitle">
         <h2 class="rv">The numbers I'd want you to <em>ask about.</em></h2>
         <p class="snote rv" style="--d:120ms">Every figure came out of one rebuild, or the delivery discipline built around it. Ask me what broke on the way — that part is more interesting.</p>
@@ -381,7 +429,7 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
 <section class="sec" id="work">
   <div class="wrap">
     <div class="shead">
-      <div class="sbar rv"><span class="n">02</span><span class="t">Experience</span><span class="x"></span><span class="m">2016 → 2026</span></div>
+      <div class="sbar rv"><span class="n">03</span><span class="t">Experience</span><span class="x"></span><span class="m">2016 → 2026</span></div>
       <div class="stitle">
         <h2 class="rv">Ten years, <em>one direction.</em></h2>
         <p class="snote rv" style="--d:120ms">Video player → consumer app → enterprise platform → my own products. Each step a larger blast radius than the last.</p>
@@ -462,7 +510,7 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
 <section class="sec" id="case">
   <div class="wrap">
     <div class="shead">
-      <div class="sbar rv"><span class="n">03</span><span class="t">Case study</span><span class="x"></span><span class="m">Servify · 2024–2026</span></div>
+      <div class="sbar rv"><span class="n">04</span><span class="t">Case study</span><span class="x"></span><span class="m">Servify · 2024–2026</span></div>
       <div class="stitle">
         <h2 class="rv">Strangling a monolith <em>in production</em></h2>
         <p class="snote rv" style="--d:120ms">Four enterprise partners, four regions, zero acceptable downtime, and a roadmap nobody would let us pause.</p>
@@ -525,7 +573,7 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
 <section class="sec" id="halisi">
   <div class="wrap">
     <div class="shead">
-      <div class="sbar rv"><span class="n">04</span><span class="t">Products</span><span class="x"></span><span class="m">Halisi · 2026 · sole engineer</span></div>
+      <div class="sbar rv"><span class="n">05</span><span class="t">Products</span><span class="x"></span><span class="m">Halisi · 2026 · sole engineer</span></div>
       <div class="stitle">
         <h2 class="rv">Two products, one engineer,<br><em>live in production.</em></h2>
         <p class="snote rv" style="--d:120ms">Halisi Safari Solutions is safari-operations infrastructure. I designed, built, shipped and support both products — architecture, data model, frontend, auth, billing logic, deploys and the 2am incidents.</p>
@@ -594,46 +642,6 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
   </div>
 </section>
 
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="shead">
-      <div class="sbar rv"><span class="n">05</span><span class="t">About</span><span class="x"></span><span class="m">Bengaluru, India</span></div>
-      <div class="stitle">
-        <h2 class="rv">Same product, progressively <em>larger blast radius.</em></h2>
-        <p class="snote rv" style="--d:120ms">Ten years, three cities, one consistent bet: that the interesting problems live where software meets the people who have to keep it running.</p>
-      </div>
-    </div>
-
-    <div class="abgrid">
-      <div class="rv">
-        <p class="body" style="margin-bottom:18px">I started in 2016 on live video — detecting ad breaks in IP streams and swapping in personalised spots. Then eight years on one platform as it grew from a consumer app for device repair into infrastructure that Apple, Samsung, HP and AT&amp;T route real warranty and claims volume through. Mumbai, then Toronto, then Bengaluru.</p>
-        <p class="body">Managing never took me out of the code. I have never been able to set architectural direction I wasn't willing to read line by line — and the months I spent building Halisi alone, every layer from multi-tenant isolation to 2am production support, were partly to check that the instinct was still real. It was.</p>
-        <dl class="facts">
-          <dt>Education</dt><dd>BCA, Computer Science — Jain University, 2016</dd>
-          <dt>Based</dt><dd>Bengaluru — previously Toronto and Mumbai</dd>
-          <dt>Open to</dt><dd>Engineering Manager · Senior / Staff Engineer — remote, hybrid or relocation</dd>
-        </dl>
-      </div>
-
-      <div class="rv" style="--d:120ms">
-        <span class="label">How I work</span>
-        <div class="prin" style="margin:14px 0 0">
-          <div class="pr"><i>01</i><div><b>Contracts before code</b><span>Agreeing on the interface is far cheaper than agreeing about it afterwards, across four squads.</span></div></div>
-          <div class="pr"><i>02</i><div><b>A boring deploy is a feature</b><span>Observability, logging and pipelines go in before the migration, not after the first incident.</span></div></div>
-          <div class="pr"><i>03</i><div><b>I still read the diff</b><span>Direction I'm not willing to review line by line isn't direction — it's an opinion.</span></div></div>
-        </div>
-
-        <div style="margin-top:var(--s5)">
-          <span class="label">Toolkit</span>
-          <div class="tgroup"><h4>Frontend</h4><div class="chips" style="margin-top:0"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Redux</span><span class="chip">Micro frontends</span><span class="chip">Design systems</span><span class="chip">SSR</span><span class="chip">WCAG</span><span class="chip">Performance</span></div></div>
-          <div class="tgroup"><h4>Backend &amp; platform</h4><div class="chips" style="margin-top:0"><span class="chip">Node.js</span><span class="chip">Microservices</span><span class="chip">REST API design</span><span class="chip">System design</span><span class="chip">Multi-tenant</span><span class="chip">Multi-region</span><span class="chip">MongoDB</span></div></div>
-          <div class="tgroup"><h4>Delivery &amp; cloud</h4><div class="chips" style="margin-top:0"><span class="chip">Playwright</span><span class="chip">Cypress</span><span class="chip">Jenkins</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Observability</span><span class="chip">AWS</span><span class="chip">GCP</span></div></div>
-          <div class="tgroup"><h4>AI &amp; leadership</h4><div class="chips" style="margin-top:0"><span class="chip">LLM features</span><span class="chip">RAG</span><span class="chip">Hiring</span><span class="chip">Performance reviews</span><span class="chip">Mentoring</span><span class="chip">Roadmapping</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec" id="term">
   <div class="wrap">
@@ -871,12 +879,12 @@ footer{border-top:1px solid var(--line2);margin-top:var(--s6);padding:20px 0 28p
       'So: contracts standardised '+k('before')+' any service was written, boundaries drawn around business capability, then the monolith strangled one capability at a time with the old path live. Observability and CI/CD went in first.<br><br>'+
       'Result: '+k('−70% incidents')+', '+k('+50% throughput')+', '+k('2× release velocity')+' — and four squads shipping to one standard.'; },
     skills:function(){ return [
-      k('frontend ')+' typescript · react · next.js · redux · micro frontends · design systems · ssr · wcag',
-      k('platform ')+' node.js · microservices · rest api design · multi-tenant · multi-region · system design',
-      k('delivery ')+' playwright · cypress · jenkins · docker · ci/cd · observability · release management',
-      k('cloud    ')+' aws · gcp · autoscaling · managed databases · monitoring',
-      k('ai       ')+' llm feature integration · rag · prompt engineering · ai-assisted dev workflows',
-      k('leading  ')+' hiring · performance reviews · mentoring · roadmapping · stakeholder management'
+      k('frontend ')+' typescript · javascript (es6+) · react · next.js · redux · html5 · css3 · micro frontends · design systems · component libraries · ssr · responsive design · accessibility (wcag) · performance optimisation',
+      k('platform ')+' node.js · microservices · rest api design · system design · monolith decomposition · multi-tenant architecture · multi-region deployments · scalability &amp; reliability engineering',
+      k('delivery ')+' react testing library · playwright · cypress · unit / integration / e2e · jenkins · ci/cd pipeline design · docker · release management · observability &amp; distributed logging',
+      k('cloud    ')+' aws · gcp · autoscaling · managed databases · monitoring · multi-environment rollouts',
+      k('ai       ')+' llm feature integration · rag · prompt engineering · ai-assisted development workflows (claude, cursor, copilot)',
+      k('leading  ')+' people management · hiring · performance reviews · mentoring &amp; coaching · agile / scrum · technical roadmapping · cross-functional &amp; stakeholder management'
     ].join('<br>'); },
     contact:function(){ return 'email     <a href="mailto:mayank007.j@gmail.com">mayank007.j@gmail.com</a><br>'+
       'phone     +91 99724 14529<br>'+
